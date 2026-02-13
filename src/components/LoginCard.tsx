@@ -29,7 +29,7 @@ export const LoginCard: React.FC = () => {
                 - Borda dourada brilhante simulada com padding e gradiente de fundo
                 - Sombra dourada difusa para "aura" de carta rara
             */}
-            <div className="relative w-[24rem] h-[36rem] rounded-[20px] p-[6px] transition-all duration-700 hover:scale-[1.02] shadow-[0_0_40px_-10px_rgba(234,179,8,0.3)] hover:shadow-[0_0_60px_-10px_rgba(234,179,8,0.5)] group">
+            <div className="relative w-[21.6rem] h-[32.4rem] rounded-[20px] p-[6px] transition-all duration-700 hover:scale-[1.02] shadow-[0_0_40px_-10px_rgba(234,179,8,0.3)] hover:shadow-[0_0_60px_-10px_rgba(234,179,8,0.5)] group">
 
                 {/* 
                     Camada de Ouro (Borda/Fundo)
@@ -55,7 +55,7 @@ export const LoginCard: React.FC = () => {
                     <div className="absolute top-4 right-6 text-yellow-200 animate-pulse delay-700 opacity-60">
                         <Sparkles className="w-6 h-6" />
                     </div>
-// removed sparkles icon
+
 
                     {/* Cabeçalho */}
                     <div className="pt-8 px-8 pb-4 text-center border-b border-yellow-500/20 relative">

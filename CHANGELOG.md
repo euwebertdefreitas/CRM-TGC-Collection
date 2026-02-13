@@ -5,6 +5,15 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.2] - 13/02/2026 20:10
+
+### Fixed
+- Remoção de texto de comentário residual ("// removed sparkles icon") equivocadamente exibido na interface.
+
+### Changed
+- Redução de ~10% nas dimensões do card de login para otimização da visualização em telas menores (viewport).
+- Atualização do tema de fundo da aplicação (App.tsx) para um tom claro suave, harmonizando com o card dourado.
+
 ## [0.3.1] - 13/02/2026 20:05
 
 ### Changed
