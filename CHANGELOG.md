@@ -5,6 +5,17 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] - 13/02/2026 20:20
+
+### Added
+- Implementação de um "Marquee" (Carrossel Infinito) de fundo na página global (`App.tsx`).
+- Exibição de cartas da coleção recente "Surging Sparks" (TBD/SV8) como background animado.
+- Adição de keyframes `marquee` e `marquee-reverse` no `tailwind.config.js`.
+
+### Changed
+- Remoção da animação intensa de rotação (`spin`) do background do card de login ("retangulo dourado"), mantendo apenas o gradiente sutil.
+- Ajuste na opacidade e grayscale do background global para não competir visualmente com o componente de login.
+
 ## [0.3.3] - 13/02/2026 20:15
 
 ### Changed

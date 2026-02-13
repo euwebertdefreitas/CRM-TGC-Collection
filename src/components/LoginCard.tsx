@@ -36,7 +36,7 @@ export const LoginCard: React.FC = () => {
                     - Gradiente metálico complexo
                     - Animação de brilho rotativo (Spin Slow)
                 */}
-                <div className="absolute inset-0 rounded-[20px] bg-gradient-to-tr from-yellow-600 via-yellow-200 to-yellow-600 animate-[spin_8s_linear_infinite] opacity-80 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 rounded-[20px] bg-gradient-to-tr from-yellow-600 via-yellow-200 to-yellow-600 opacity-80 group-hover:opacity-100 transition-opacity" />
 
                 {/* Camada Estática para definir a borda dourada fixa (caso a animação distraia) */}
                 <div className="absolute inset-[1px] rounded-[19px] bg-gradient-to-b from-yellow-300 via-yellow-600 to-yellow-800" />

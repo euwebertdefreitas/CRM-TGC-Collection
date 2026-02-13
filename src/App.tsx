@@ -1,10 +1,37 @@
 import { LoginCard } from './components/LoginCard'
 
+const RECENT_CARDS = [
+  "https://assets.pokemon.com/assets/cms2/img/cards/web/SV8/SV8_PT-BR_1.png",
+  "https://assets.pokemon.com/assets/cms2/img/cards/web/SV8/SV8_PT-BR_25.png",
+  "https://assets.pokemon.com/assets/cms2/img/cards/web/SV8/SV8_PT-BR_50.png",
+  "https://assets.pokemon.com/assets/cms2/img/cards/web/SV8/SV8_PT-BR_75.png",
+  "https://assets.pokemon.com/assets/cms2/img/cards/web/SV8/SV8_PT-BR_100.png",
+  "https://assets.pokemon.com/assets/cms2/img/cards/web/SV8/SV8_PT-BR_125.png",
+  "https://assets.pokemon.com/assets/cms2/img/cards/web/SV8/SV8_PT-BR_150.png",
+  "https://assets.pokemon.com/assets/cms2/img/cards/web/SV8/SV8_PT-BR_175.png",
+  "https://assets.pokemon.com/assets/cms2/img/cards/web/SV8/SV8_PT-BR_200.png", // Illustration Rare likely
+];
+
 function App() {
   return (
     <div className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-neutral-100">
-      {/* Background Abstract Effect */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-neutral-200 via-stone-200 to-neutral-100 opacity-80 blur-3xl scale-150 animate-pulse delay-700 pointer-events-none"></div>
+
+      {/* Background Scrolling Cards (Marquee) */}
+      <div className="absolute inset-0 z-0 overflow-hidden opacity-10 pointer-events-none grayscale-[20%]">
+        <div className="flex gap-8 animate-marquee whitespace-nowrap">
+          {[...RECENT_CARDS, ...RECENT_CARDS].map((src, i) => (
+            <img key={i} src={src} alt="Pokemon Card" className="w-64 h-auto object-contain inline-block transform rotate-6 hover:rotate-0 transition-transform duration-500" />
+          ))}
+        </div>
+        <div className="flex gap-8 animate-marquee-reverse whitespace-nowrap mt-8">
+          {[...RECENT_CARDS, ...RECENT_CARDS].reverse().map((src, i) => (
+            <img key={i} src={src} alt="Pokemon Card" className="w-64 h-auto object-contain inline-block transform -rotate-6 hover:rotate-0 transition-transform duration-500" />
+          ))}
+        </div>
+        {/* Overlay Gradient to fade edges */}
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-100 via-transparent to-neutral-100"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-neutral-100 via-transparent to-neutral-100"></div>
+      </div>
 
       <div className="z-10 animate-fade-in-up">
         <LoginCard />
