@@ -5,6 +5,13 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.3] - 13/02/2026 20:35
+
+### Changed
+- Substituição do método de carregamento de imagens do background (Marquee) para utilizar assets locais em `public/cards/`.
+- Configuração de uma estrutura de arquivos placeholder (`.svg`) para Mega Dragonite ex, Mega Charizard Y ex, Pikachu ex e Mewtwo ex, garantindo a exibição do carrossel mesmo sem os arquivos finais do usuário.
+- Aumento da duplicação dos itens no array do carrossel para garantir uma animação mais fluida e contínua em telas largas.
+
 ## [0.4.2] - 13/02/2026 20:30
 
 ### Fixed

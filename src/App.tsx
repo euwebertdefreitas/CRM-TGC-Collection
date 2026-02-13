@@ -1,14 +1,10 @@
 import { LoginCard } from './components/LoginCard'
 
 const RECENT_CARDS = [
-  "https://assets.pokemon.com/assets/cms2/img/cards/web/ASC/ASC_PT-BR_1.png",   // Oddish
-  "https://assets.pokemon.com/assets/cms2/img/cards/web/ASC/ASC_PT-BR_3.png",   // Vileplume ex
-  "https://assets.pokemon.com/assets/cms2/img/cards/web/ASC/ASC_PT-BR_22.png",  // Mega Charizard Y ex
-  "https://assets.pokemon.com/assets/cms2/img/cards/web/ASC/ASC_PT-BR_47.png",  // Mega Froslass ex
-  "https://assets.pokemon.com/assets/cms2/img/cards/web/ASC/ASC_PT-BR_135.png", // Mega Scrafty ex
-  "https://assets.pokemon.com/assets/cms2/img/cards/web/ASC/ASC_PT-BR_152.png", // Mega Dragonite ex
-  "https://assets.pokemon.com/assets/cms2/img/cards/web/ASC/ASC_PT-BR_284.png", // Mega Gengar ex (SIR)
-  "https://assets.pokemon.com/assets/cms2/img/cards/web/ASC/ASC_PT-BR_294.png", // Mega Charizard Y ex (Hyper Rare)
+  "/cards/mega-dragonite-ex.svg",
+  "/cards/mega-charizard-y-ex.svg",
+  "/cards/pikachu-ex.svg",
+  "/cards/mewtwo-ex-rocket.svg",
 ];
 
 function App() {
@@ -18,12 +14,12 @@ function App() {
       {/* Background Scrolling Cards (Marquee) */}
       <div className="absolute inset-0 z-0 overflow-hidden opacity-10 pointer-events-none grayscale-[20%]">
         <div className="flex gap-8 animate-marquee whitespace-nowrap">
-          {[...RECENT_CARDS, ...RECENT_CARDS].map((src, i) => (
+          {[...RECENT_CARDS, ...RECENT_CARDS, ...RECENT_CARDS, ...RECENT_CARDS].map((src, i) => (
             <img key={i} src={src} alt="Pokemon Card" className="w-64 h-auto object-contain inline-block transform rotate-6 hover:rotate-0 transition-transform duration-500" />
           ))}
         </div>
         <div className="flex gap-8 animate-marquee-reverse whitespace-nowrap mt-8">
-          {[...RECENT_CARDS, ...RECENT_CARDS].reverse().map((src, i) => (
+          {[...RECENT_CARDS, ...RECENT_CARDS, ...RECENT_CARDS, ...RECENT_CARDS].reverse().map((src, i) => (
             <img key={i} src={src} alt="Pokemon Card" className="w-64 h-auto object-contain inline-block transform -rotate-6 hover:rotate-0 transition-transform duration-500" />
           ))}
         </div>
