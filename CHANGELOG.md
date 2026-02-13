@@ -5,6 +5,12 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.2] - 13/02/2026 20:30
+
+### Fixed
+- Correção na URL das imagens do background animado (Marquee), atualizando os assets para a coleção "Ascended Heroes" (ASC).
+- Substituição dos placeholders quebrados por URLs válidas seguindo o padrão da coleção oficial (ASC_PT-BR).
+
 ## [0.4.1] - 13/02/2026 20:25
 
 ### Changed

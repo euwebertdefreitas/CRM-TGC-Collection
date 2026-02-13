@@ -1,15 +1,14 @@
 import { LoginCard } from './components/LoginCard'
 
 const RECENT_CARDS = [
-  "https://assets.pokemon.com/assets/cms2/img/cards/web/SV8/SV8_PT-BR_1.png",
-  "https://assets.pokemon.com/assets/cms2/img/cards/web/SV8/SV8_PT-BR_25.png",
-  "https://assets.pokemon.com/assets/cms2/img/cards/web/SV8/SV8_PT-BR_50.png",
-  "https://assets.pokemon.com/assets/cms2/img/cards/web/SV8/SV8_PT-BR_75.png",
-  "https://assets.pokemon.com/assets/cms2/img/cards/web/SV8/SV8_PT-BR_100.png",
-  "https://assets.pokemon.com/assets/cms2/img/cards/web/SV8/SV8_PT-BR_125.png",
-  "https://assets.pokemon.com/assets/cms2/img/cards/web/SV8/SV8_PT-BR_150.png",
-  "https://assets.pokemon.com/assets/cms2/img/cards/web/SV8/SV8_PT-BR_175.png",
-  "https://assets.pokemon.com/assets/cms2/img/cards/web/SV8/SV8_PT-BR_200.png", // Illustration Rare likely
+  "https://assets.pokemon.com/assets/cms2/img/cards/web/ASC/ASC_PT-BR_1.png",   // Oddish
+  "https://assets.pokemon.com/assets/cms2/img/cards/web/ASC/ASC_PT-BR_3.png",   // Vileplume ex
+  "https://assets.pokemon.com/assets/cms2/img/cards/web/ASC/ASC_PT-BR_22.png",  // Mega Charizard Y ex
+  "https://assets.pokemon.com/assets/cms2/img/cards/web/ASC/ASC_PT-BR_47.png",  // Mega Froslass ex
+  "https://assets.pokemon.com/assets/cms2/img/cards/web/ASC/ASC_PT-BR_135.png", // Mega Scrafty ex
+  "https://assets.pokemon.com/assets/cms2/img/cards/web/ASC/ASC_PT-BR_152.png", // Mega Dragonite ex
+  "https://assets.pokemon.com/assets/cms2/img/cards/web/ASC/ASC_PT-BR_284.png", // Mega Gengar ex (SIR)
+  "https://assets.pokemon.com/assets/cms2/img/cards/web/ASC/ASC_PT-BR_294.png", // Mega Charizard Y ex (Hyper Rare)
 ];
 
 function App() {
