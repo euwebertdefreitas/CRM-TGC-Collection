@@ -5,6 +5,13 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.1] - 13/02/2026 20:05
+
+### Changed
+- Substituição do ícone de raio (Zap) por uma Pokébola dourada estilizada no cabeçalho do card.
+- Alteração do subtítulo de "Acesso Premium" para "Acesso do Colecionador".
+- Remoção do ícone de estrela (sparkle) próximo ao botão de login para limpar a interface.
+
 ## [0.3.0] - 13/02/2026 19:57
 
 ### Changed

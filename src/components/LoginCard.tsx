@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Lock, Sparkles, Loader2, Zap } from 'lucide-react';
+import { Mail, Lock, Sparkles, Loader2 } from 'lucide-react';
 
 /**
  * LoginCard Component - Hyper Rare Gold Edition (v0.3.0)
@@ -55,22 +55,23 @@ export const LoginCard: React.FC = () => {
                     <div className="absolute top-4 right-6 text-yellow-200 animate-pulse delay-700 opacity-60">
                         <Sparkles className="w-6 h-6" />
                     </div>
-                    <div className="absolute bottom-20 left-4 text-yellow-400 animate-pulse opacity-40">
-                        <Sparkles className="w-4 h-4" />
-                    </div>
+// removed sparkles icon
 
                     {/* Cabeçalho */}
                     <div className="pt-8 px-8 pb-4 text-center border-b border-yellow-500/20 relative">
                         <div className="flex justify-center mb-2">
-                            <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-700 rounded-full flex items-center justify-center shadow-lg shadow-yellow-500/20">
-                                <Zap className="w-6 h-6 text-yellow-50 fill-yellow-100" />
+                            <div className="w-12 h-12 relative flex items-center justify-center filter drop-shadow-[0_0_10px_rgba(234,179,8,0.3)]">
+                                <div className="absolute inset-0 bg-gradient-to-tr from-yellow-600 to-yellow-300 rounded-full border-2 border-yellow-900/50 shadow-inner"></div>
+                                <div className="absolute top-1/2 left-0 right-0 h-1 bg-yellow-900/40 -mt-0.5 z-10"></div>
+                                <div className="absolute top-1/2 left-1/2 w-4 h-4 bg-yellow-200 rounded-full border-2 border-yellow-900/40 -translate-x-1/2 -translate-y-1/2 z-20 shadow-sm"></div>
+                                <div className="absolute top-0 inset-x-0 h-1/2 bg-gradient-to-b from-white/20 to-transparent rounded-t-full pointer-events-none"></div>
                             </div>
                         </div>
                         <h1 className="text-2xl font-bold font-['Poppins'] tracking-widest uppercase bg-gradient-to-b from-yellow-100 via-yellow-300 to-yellow-600 bg-clip-text text-transparent drop-shadow-sm">
                             TCG Collection
                         </h1>
                         <p className="text-[10px] text-yellow-500/60 font-mono tracking-[0.2em] mt-1 uppercase">
-                            Acesso Premium
+                            Acesso do Colecionador
                         </p>
                     </div>
 
