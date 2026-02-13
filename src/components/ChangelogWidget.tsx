@@ -134,8 +134,10 @@ export const ChangelogWidget: React.FC = () => {
                             <div className="flex justify-between items-start mb-4">
                                 <div>
                                     <h2 className="text-xl font-bold text-white tracking-wide">Novidades</h2>
-                                    <p className="text-xs text-slate-400 mt-1 font-mono uppercase tracking-wider">
+                                    <p className="text-xs text-slate-400 mt-1 font-mono uppercase tracking-wider flex items-center gap-2">
                                         Versão Atual: <span className="text-yellow-400 font-bold">v{latestVersion.version}</span>
+                                        <span className="w-1 h-1 rounded-full bg-slate-600" />
+                                        <span>{latestVersion.date}</span>
                                     </p>
                                 </div>
                                 <button
@@ -147,7 +149,7 @@ export const ChangelogWidget: React.FC = () => {
                             </div>
 
                             {/* Badges de Estatísticas da Versão Atual */}
-                            <div className="flex gap-2 flex-wrap">
+                            <div className="flex gap-2 flex-wrap mt-2">
                                 {Object.entries(stats).map(([type, count]) => (
                                     <span key={type} className={`px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5 border ${getTypeColor(type as ChangeType)}`}>
                                         {getTypeIcon(type as ChangeType)}

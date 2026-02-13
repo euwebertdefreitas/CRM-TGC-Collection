@@ -5,6 +5,12 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.1] - 13/02/2026 21:15
+
+### Changed
+- Melhoria no cabeçalho do modal de "Novidades" para incluir explicitamente a data de publicação da versão atual.
+- Ajuste de espaçamento e layout dos badges de estatísticas para maior destaque e organização.
+
 ## [0.6.0] - 13/02/2026 21:10
 
 ### Added
