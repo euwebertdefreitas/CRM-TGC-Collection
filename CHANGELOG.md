@@ -1,11 +1,17 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
-## [0.2.0] - 2026-02-13
+## [0.2.1] - 13/02/2026 19:55
+
+### Changed
+- Padronização do formato de data no CHANGELOG.md para o padrão brasileiro (DD/MM/AAAA HH:mm).
+- Revisão e tradução completa das entradas anteriores.
+
+## [0.2.0] - 13/02/2026 19:50
 
 ### Added
 - Link para recuperação de senha ("Esqueci minha senha").
@@ -16,12 +22,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Localização completa para Português do Brasil (Labels, Botões, Títulos).
 - Atualização do rodapé para copyright dinâmico (Parametrus.com).
 
-## [0.1.1] - 2026-02-13
+## [0.1.1] - 13/02/2026 19:40
 
 ### Changed
 - Documentação do projeto (README.md) atualizada e traduzida integralmente para Português do Brasil.
 
-## [0.1.0] - 2026-02-13
+## [0.1.0] - 13/02/2026 19:35
 
 ### Added
 - Interface de Login (LoginCard) estilizada como carta TCG com efeitos holográficos.
