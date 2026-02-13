@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] - 2026-02-13
+
+### Added
+- Link para recuperação de senha ("Esqueci minha senha").
+- Efeitos visuais de "Hyper Rare" (Rainbow Rare) com gradientes cônicos e animações de ruído.
+
+### Changed
+- Refatoração completa da UI de Login para tema "Rainbow Rare" com glassmorphism avançado.
+- Localização completa para Português do Brasil (Labels, Botões, Títulos).
+- Atualização do rodapé para copyright dinâmico (Parametrus.com).
+
 ## [0.1.1] - 2026-02-13
 
 ### Changed

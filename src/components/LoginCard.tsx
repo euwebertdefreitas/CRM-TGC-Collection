@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import { Mail, Lock, Sparkles, Loader2 } from 'lucide-react';
 
 /**
- * LoginCard Component
+ * LoginCard Component - Refactored (v0.2.0)
  * 
- * Represents the login interface styled as a premium TCG card.
- * Uses Tailwind CSS for all styling, including complex gradients and animations.
+ * Theme: Hyper Rare / Rainbow Rare (Pokemon TCG)
+ * Localization: PT-BR
  */
 export const LoginCard: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+
+    const currentYear = new Date().getFullYear();
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
@@ -22,126 +24,129 @@ export const LoginCard: React.FC = () => {
     return (
         <div className="flex items-center justify-center p-4 perspective-1000">
             {/* 
-        Card Container
-        - w-[22rem] & h-[30.8rem]: Maintains ~2.5/3.5 aspect ratio (352px x 492px)
-        - relative: Positioning context for absolute children (effects)
-        - group: Allows hover effects on children when hovering container
-        - transition-transform: Smooth movement for 3D or hover effects
-      */}
-            <div className="relative w-[22rem] h-[30.8rem] rounded-2xl p-[2px] overflow-hidden group hover:scale-105 transition-transform duration-500 ease-out shadow-2xl shadow-black/50">
-
-                {/*
-          Holographic Border Effect
-          - absolute inset-0: Covers the entire container
-          - bg-gradient-to-br: Gradient direction
-          - from-cyan-400 via-purple-500 to-pink-500: Vibrant holographic colors
-          - animate-spin-slow (custom via style): Rotating gradient
-          Note: We simulate the 'foil' border by having a colorful background and a slightly smaller inner container.
-        */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 via-purple-500 to-pink-500 opacity-70 group-hover:opacity-100 transition-opacity duration-500 animate-[spin_4s_linear_infinite]" />
+                Card Container - Hyper Rare Edition
+                - Rainbow/Holographic border simulation using multiple heavy shadows and gradients
+            */}
+            <div className="relative w-[22rem] h-[34rem] rounded-2xl p-[3px] overflow-hidden group hover:scale-[1.02] transition-transform duration-500 ease-out shadow-2xl shadow-purple-500/30">
 
                 {/* 
-          Inner Card Body (Dark Surface)
-          - relative: Stacks above the border background
-          - h-full w-full: Fills the container (minus the padding from parent)
-          - bg-[#1a1a1a]: Dark textured background similar to TCG card backing
-          - rounded-2xl: Matches data radius with slight offset
-          - flex col: Layout direction
-        */}
-                <div className="relative h-full w-full bg-[#121212] rounded-[14px] flex flex-col p-6 z-10 overflow-hidden">
+                   Rainbow Holographic Background/Border 
+                   Using a conic gradient to simulate the spectral reflection of a Rainbow Rare card.
+                   Animate-spin-slow gives it the shifting light effect.
+                */}
+                <div className="absolute inset-0 bg-[conic-gradient(from_0deg,red,orange,yellow,green,blue,indigo,violet,red)] opacity-60 group-hover:opacity-80 blur-xl animate-[spin_6s_linear_infinite]" />
+                <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-white/20 opacity-50 mix-blend-overlay" />
 
-                    {/* Header / "Card Name" Area */}
-                    <div className="flex items-center justify-between mb-6 border-b border-gray-800 pb-2">
+                {/* 
+                    Card Body
+                    - backdrop-blur-xl: Glassmorphism feel
+                    - bg-black/80: Dark base but allows some holo bleed-through
+                */}
+                <div className="relative h-full w-full bg-slate-900/90 backdrop-blur-xl rounded-[13px] flex flex-col p-6 z-10 overflow-hidden border border-white/10">
+
+                    {/* Noise Texture Overlay for "Texture" feel */}
+                    <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat" />
+
+                    {/* Header: TCG Collection */}
+                    <div className="flex items-center justify-between mb-8 border-b border-white/10 pb-4 relative z-20">
                         <div className="flex items-center gap-2">
-                            <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" />
-                            <h1 className="text-xl font-bold font-['Poppins'] tracking-wide bg-gradient-to-r from-yellow-200 to-yellow-600 bg-clip-text text-transparent">
-                                TRAINER LOGIN
+                            <Sparkles className="w-5 h-5 text-purple-300 animate-pulse" />
+                            <h1 className="text-2xl font-bold font-['Poppins'] tracking-wider bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+                                TCG Collection
                             </h1>
                         </div>
-                        <span className="text-xs font-mono text-gray-500">HP 100</span>
-                    </div>
-
-                    {/* "Card Art" / Main Visual Area (Simulated with icon/illustration for now) */}
-                    <div className="w-full h-32 bg-gradient-to-b from-gray-800 to-gray-900 rounded-lg border border-gray-700 mb-6 flex items-center justify-center relative group-hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-shadow duration-300">
-                        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
-                        <div className="text-center z-10">
-                            <div className="w-16 h-16 bg-gradient-to-tr from-purple-600 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-2 shadow-lg ring-2 ring-white/10">
-                                <Lock className="w-8 h-8 text-white drop-shadow-md" />
-                            </div>
-                            <p className="text-[10px] text-gray-400 uppercase tracking-widest">Security Clearance</p>
+                        <div className="px-2 py-0.5 rounded border border-purple-500/30 bg-purple-500/10 text-[10px] font-mono text-purple-200">
+                            HR
                         </div>
                     </div>
 
-                    {/* Login Form Items ("Attacks" / "Abilities") */}
-                    <form onSubmit={handleLogin} className="space-y-4 flex-1">
+                    {/* Main Form Area */}
+                    <form onSubmit={handleLogin} className="space-y-5 flex-1 relative z-20">
 
-                        {/* Email Input Group */}
-                        <div className="space-y-1">
-                            <label className="text-xs font-medium text-gray-400 ml-1">Email</label>
+                        {/* Email Input */}
+                        <div className="space-y-1.5">
+                            <label className="text-xs font-semibold text-gray-300 ml-1 uppercase tracking-wider">E-mail</label>
                             <div className="relative group/input">
-                                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 group-focus-within/input:text-purple-400 transition-colors" />
+                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg blur opacity-20 group-focus-within/input:opacity-50 transition-opacity" />
+                                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within/input:text-pink-300 transition-colors z-10" />
                                 <input
                                     type="email"
                                     required
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="w-full bg-[#1e1e1e] border border-gray-700 text-gray-200 text-sm rounded-lg pl-10 pr-4 py-2.5 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all placeholder-gray-600"
-                                    placeholder="trainer@example.com"
+                                    className="relative w-full bg-[#0a0a0a]/80 border border-white/10 text-gray-100 text-sm rounded-lg pl-10 pr-4 py-3 focus:outline-none focus:border-pink-500/50 focus:ring-1 focus:ring-pink-500/20 transition-all placeholder-gray-600 backdrop-blur-sm"
+                                    placeholder="treinador@exemplo.com"
                                 />
                             </div>
                         </div>
 
-                        {/* Password Input Group */}
-                        <div className="space-y-1">
-                            <label className="text-xs font-medium text-gray-400 ml-1">Password</label>
+                        {/* Password Input */}
+                        <div className="space-y-1.5">
+                            <label className="text-xs font-semibold text-gray-300 ml-1 uppercase tracking-wider">Senha</label>
                             <div className="relative group/input">
-                                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 group-focus-within/input:text-purple-400 transition-colors" />
+                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg blur opacity-20 group-focus-within/input:opacity-50 transition-opacity" />
+                                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within/input:text-pink-300 transition-colors z-10" />
                                 <input
                                     type="password"
                                     required
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
-                                    className="w-full bg-[#1e1e1e] border border-gray-700 text-gray-200 text-sm rounded-lg pl-10 pr-4 py-2.5 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all placeholder-gray-600"
+                                    className="relative w-full bg-[#0a0a0a]/80 border border-white/10 text-gray-100 text-sm rounded-lg pl-10 pr-4 py-3 focus:outline-none focus:border-pink-500/50 focus:ring-1 focus:ring-pink-500/20 transition-all placeholder-gray-600 backdrop-blur-sm"
                                     placeholder="••••••••"
                                 />
                             </div>
+                            {/* Forgot Password Link */}
+                            <div className="flex justify-end pt-1">
+                                <a href="#" className="text-[11px] text-gray-400 hover:text-pink-300 transition-colors hover:underline">
+                                    Esqueci minha senha
+                                </a>
+                            </div>
                         </div>
 
-                        {/* Login Button ("Special Move") */}
+                        {/* Submit Button */}
                         <button
                             type="submit"
                             disabled={isLoading}
-                            className="w-full mt-6 relative overflow-hidden rounded-lg group/btn"
+                            className="w-full mt-8 relative overflow-hidden rounded-lg group/btn h-12 shadow-[0_4px_14px_0_rgba(236,72,153,0.39)] hover:shadow-[0_6px_20px_rgba(236,72,153,0.23)] hover:-translate-y-0.5 transition-all duration-300"
                         >
-                            {/* Button Background Gradient - Holographic Feel */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 transition-transform duration-300 group-hover/btn:scale-105" />
+                            {/* Button Background - Heavy Gradient */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 group-hover/btn:scale-[1.03] transition-transform duration-300" />
 
-                            {/* Shimmer Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]" />
+                            {/* Texture/Noise on Button */}
+                            <div className="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none" />
 
                             {/* Button Content */}
-                            <div className="relative px-6 py-3 flex items-center justify-center gap-2 font-bold tracking-wide text-white">
+                            <div className="relative flex items-center justify-center gap-3 font-bold tracking-widest text-white text-sm uppercase">
                                 {isLoading ? (
                                     <Loader2 className="w-5 h-5 animate-spin" />
                                 ) : (
                                     <>
-                                        <span>UNLOCK DECK</span>
-                                        <Sparkles className="w-4 h-4" />
+                                        <span>Entrar</span>
+                                        <Sparkles className="w-4 h-4 text-yellow-200 animate-pulse" />
                                     </>
                                 )}
                             </div>
                         </button>
                     </form>
 
-                    {/* Footer / Copyright / Card Set Info */}
-                    <div className="mt-4 pt-3 border-t border-gray-800 flex justify-between text-[10px] text-gray-600 font-mono">
-                        <span>001/151 • Common</span>
-                        <span>© 2024 CRM-TCG</span>
+                    {/* Footer - Dynamic Year */}
+                    <div className="mt-6 pt-4 border-t border-white/5 flex flex-col items-center gap-1 text-[10px] text-gray-500 font-mono relative z-20">
+                        <div className="flex w-full justify-between opacity-70">
+                            <span>253/250 • Hyper Rare</span>
+                            <span>★</span>
+                        </div>
+                        <span className="mt-1 hover:text-gray-300 transition-colors cursor-default">
+                            © {currentYear} Parametrus.com
+                        </span>
                     </div>
                 </div>
 
-                {/* Glossy Overlay (Reflection) */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none rounded-2xl z-20" />
+                {/* Glossy Overlay (Reflection) - Diagonal Swipe */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-white/5 to-transparent pointer-events-none rounded-2xl z-30 mix-blend-overlay" />
+
+                {/* Holo Sparkles (Static CSS representation, in lieu of JS particles for now) */}
+                <div className="absolute top-10 right-10 w-20 h-20 bg-purple-500/20 blur-3xl rounded-full pointer-events-none animate-pulse" />
+                <div className="absolute bottom-10 left-10 w-24 h-24 bg-pink-500/20 blur-3xl rounded-full pointer-events-none animate-pulse delay-700" />
             </div>
         </div>
     );
