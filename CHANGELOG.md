@@ -5,6 +5,16 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.0] - 13/02/2026 21:10
+
+### Added
+- Implementação de um Widget de "Novidades" (Changelog) interativo:
+    - Botão Flutuante (FAB) com efeito "glassmorphism" e ícone de histórico no canto inferior esquerdo.
+    - Modal responsivo com animações suaves de entrada (fade/zoom).
+    - Exibição organizada do histórico de versões com badges coloridos por tipo de mudança (Added, Changed, Fixed, Removed).
+    - Estatísticas visuais (contagem de itens) da versão atual no cabeçalho do modal.
+- Criação do componente `ChangelogWidget.tsx` com dados mockados refletindo o histórico real do projeto.
+
 ## [0.5.1] - 13/02/2026 21:00
 
 ### Fixed
