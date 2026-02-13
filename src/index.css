@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color: #0f172a; /* Slate 900 */
+  color: #f8fafc;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  /* min-width: 320px; */ /* Removed to allow responsiveness */
+  width: 100vw;
+  min-height: 100vh;
+  justify-content: center; /* Center horizontally */
+  font-family: 'Inter', sans-serif;
+  overflow: hidden; /* Prevent scrollbars during animations if possible */
+  background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%); /* Subtle radial gradient background */
+}
