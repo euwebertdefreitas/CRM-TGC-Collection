@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Mail, Lock, Sparkles, Loader2 } from 'lucide-react';
 
 /**
- * LoginCard Component - Hyper Rare Gold Edition (v0.3.0)
+ * Login Component - Hyper Rare Gold Edition (v0.3.0)
  * 
  * Tema: Hyper Rare (Gold Secret Rare) - Inspirado em cartas Mew ex douradas.
  * Estética: Dourado metálico, luxuoso, partículas de brilho, fundo escuro premium.
  * Adaptação: UI moderna com legibilidade preservada.
  */
-export const LoginCard: React.FC = () => {
+export const Login: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);

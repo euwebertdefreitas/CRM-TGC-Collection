@@ -5,6 +5,18 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0] - 13/02/2026 20:45
+
+### Removed
+- Remoção completa do componente "Marquee" (Carrossel de Cartas) do background global (`App.tsx`).
+- Exclusão dos assets locais de cartas Pokémon (`public/cards/`).
+- Remoção das configurações de animação `marquee` no `tailwind.config.js`.
+- Remoção dos logos do Vite (`public/vite.svg`) e React (`src/assets/react.svg`).
+
+### Changed
+- Renomeação do componente e arquivo principal de login de `LoginCard` para `Login` (refatoração de nomenclatura).
+- Limpeza do layout global, removendo distrações visuais de fundo.
+
 ## [0.4.3] - 13/02/2026 20:35
 
 ### Changed

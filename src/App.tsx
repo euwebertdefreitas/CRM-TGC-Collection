@@ -1,35 +1,13 @@
-import { LoginCard } from './components/LoginCard'
-
-const RECENT_CARDS = [
-  "/cards/mega-dragonite-ex.svg",
-  "/cards/mega-charizard-y-ex.svg",
-  "/cards/pikachu-ex.svg",
-  "/cards/mewtwo-ex-rocket.svg",
-];
+import { Login } from './components/Login'
 
 function App() {
   return (
     <div className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-neutral-100">
-
-      {/* Background Scrolling Cards (Marquee) */}
-      <div className="absolute inset-0 z-0 overflow-hidden opacity-10 pointer-events-none grayscale-[20%]">
-        <div className="flex gap-8 animate-marquee whitespace-nowrap">
-          {[...RECENT_CARDS, ...RECENT_CARDS, ...RECENT_CARDS, ...RECENT_CARDS].map((src, i) => (
-            <img key={i} src={src} alt="Pokemon Card" className="w-64 h-auto object-contain inline-block transform rotate-6 hover:rotate-0 transition-transform duration-500" />
-          ))}
-        </div>
-        <div className="flex gap-8 animate-marquee-reverse whitespace-nowrap mt-8">
-          {[...RECENT_CARDS, ...RECENT_CARDS, ...RECENT_CARDS, ...RECENT_CARDS].reverse().map((src, i) => (
-            <img key={i} src={src} alt="Pokemon Card" className="w-64 h-auto object-contain inline-block transform -rotate-6 hover:rotate-0 transition-transform duration-500" />
-          ))}
-        </div>
-        {/* Overlay Gradient to fade edges */}
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-100 via-transparent to-neutral-100"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-neutral-100 via-transparent to-neutral-100"></div>
-      </div>
+      {/* Background Abstract Effect */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-neutral-200 via-stone-200 to-neutral-100 opacity-80 blur-3xl scale-150 animate-pulse delay-700 pointer-events-none"></div>
 
       <div className="z-10 animate-fade-in-up">
-        <LoginCard />
+        <Login />
       </div>
 
       {/* Floating Particles (Simulating dust/magic) - Optional Visual Flourish */}
