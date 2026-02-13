@@ -29,7 +29,7 @@ export const LoginCard: React.FC = () => {
                 - Borda dourada brilhante simulada com padding e gradiente de fundo
                 - Sombra dourada difusa para "aura" de carta rara
             */}
-            <div className="relative w-[21.6rem] h-[32.4rem] rounded-[20px] p-[6px] transition-all duration-700 hover:scale-[1.02] shadow-[0_0_40px_-10px_rgba(234,179,8,0.3)] hover:shadow-[0_0_60px_-10px_rgba(234,179,8,0.5)] group">
+            <div className="relative w-[20.5rem] h-[30.8rem] rounded-[20px] p-[6px] transition-all duration-700 hover:scale-[1.02] shadow-[0_0_40px_-10px_rgba(234,179,8,0.3)] hover:shadow-[0_0_60px_-10px_rgba(234,179,8,0.5)] group">
 
                 {/* 
                     Camada de Ouro (Borda/Fundo)

@@ -5,6 +5,12 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.3] - 13/02/2026 20:15
+
+### Changed
+- Redução adicional de 5% nas dimensões do card de login.
+- Padronização do fundo da página (`index.css` e `App.tsx`) para tom claro (`#f5f5f5`) garantindo uniformidade em todos os viewports.
+
 ## [0.3.2] - 13/02/2026 20:10
 
 ### Fixed
