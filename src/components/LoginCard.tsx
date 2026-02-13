@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Mail, Lock, Sparkles, Loader2 } from 'lucide-react';
+import { Mail, Lock, Sparkles, Loader2, Zap } from 'lucide-react';
 
 /**
- * LoginCard Component - Refactored (v0.2.0)
+ * LoginCard Component - Hyper Rare Gold Edition (v0.3.0)
  * 
- * Theme: Hyper Rare / Rainbow Rare (Pokemon TCG)
- * Localization: PT-BR
+ * Tema: Hyper Rare (Gold Secret Rare) - Inspirado em cartas Mew ex douradas.
+ * Estética: Dourado metálico, luxuoso, partículas de brilho, fundo escuro premium.
+ * Adaptação: UI moderna com legibilidade preservada.
  */
 export const LoginCard: React.FC = () => {
     const [email, setEmail] = useState('');
@@ -17,136 +18,145 @@ export const LoginCard: React.FC = () => {
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
-        // Simulate API call
+        // Simulação de chamada de API
         setTimeout(() => setIsLoading(false), 2000);
     };
 
     return (
         <div className="flex items-center justify-center p-4 perspective-1000">
             {/* 
-                Card Container - Hyper Rare Edition
-                - Rainbow/Holographic border simulation using multiple heavy shadows and gradients
+                Container Principal da Carta
+                - Borda dourada brilhante simulada com padding e gradiente de fundo
+                - Sombra dourada difusa para "aura" de carta rara
             */}
-            <div className="relative w-[22rem] h-[34rem] rounded-2xl p-[3px] overflow-hidden group hover:scale-[1.02] transition-transform duration-500 ease-out shadow-2xl shadow-purple-500/30">
+            <div className="relative w-[24rem] h-[36rem] rounded-[20px] p-[6px] transition-all duration-700 hover:scale-[1.02] shadow-[0_0_40px_-10px_rgba(234,179,8,0.3)] hover:shadow-[0_0_60px_-10px_rgba(234,179,8,0.5)] group">
 
                 {/* 
-                   Rainbow Holographic Background/Border 
-                   Using a conic gradient to simulate the spectral reflection of a Rainbow Rare card.
-                   Animate-spin-slow gives it the shifting light effect.
+                    Camada de Ouro (Borda/Fundo)
+                    - Gradiente metálico complexo
+                    - Animação de brilho rotativo (Spin Slow)
                 */}
-                <div className="absolute inset-0 bg-[conic-gradient(from_0deg,red,orange,yellow,green,blue,indigo,violet,red)] opacity-60 group-hover:opacity-80 blur-xl animate-[spin_6s_linear_infinite]" />
-                <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-white/20 opacity-50 mix-blend-overlay" />
+                <div className="absolute inset-0 rounded-[20px] bg-gradient-to-tr from-yellow-600 via-yellow-200 to-yellow-600 animate-[spin_8s_linear_infinite] opacity-80 group-hover:opacity-100 transition-opacity" />
+
+                {/* Camada Estática para definir a borda dourada fixa (caso a animação distraia) */}
+                <div className="absolute inset-[1px] rounded-[19px] bg-gradient-to-b from-yellow-300 via-yellow-600 to-yellow-800" />
 
                 {/* 
-                    Card Body
-                    - backdrop-blur-xl: Glassmorphism feel
-                    - bg-black/80: Dark base but allows some holo bleed-through
+                    Miolo da Carta (Interface)
+                    - Fundo escuro profundo (Slate 950) para contraste alto com o ouro
+                    - Textura granulada sutil
                 */}
-                <div className="relative h-full w-full bg-slate-900/90 backdrop-blur-xl rounded-[13px] flex flex-col p-6 z-10 overflow-hidden border border-white/10">
+                <div className="relative h-full w-full bg-[#0a0a0a] rounded-[16px] flex flex-col overflow-hidden relative z-10">
 
-                    {/* Noise Texture Overlay for "Texture" feel */}
-                    <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat" />
+                    {/* Background Texture - Textura sutil de ruído/papel */}
+                    <div className="absolute inset-0 opacity-[0.4] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
-                    {/* Header: TCG Collection */}
-                    <div className="flex items-center justify-between mb-8 border-b border-white/10 pb-4 relative z-20">
-                        <div className="flex items-center gap-2">
-                            <Sparkles className="w-5 h-5 text-purple-300 animate-pulse" />
-                            <h1 className="text-2xl font-bold font-['Poppins'] tracking-wider bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
-                                TCG Collection
-                            </h1>
-                        </div>
-                        <div className="px-2 py-0.5 rounded border border-purple-500/30 bg-purple-500/10 text-[10px] font-mono text-purple-200">
-                            HR
-                        </div>
+                    {/* Brilhozinhos (Sparkles) Estáticos Decorativos - Característica da carta Hyper Rare */}
+                    <div className="absolute top-4 right-6 text-yellow-200 animate-pulse delay-700 opacity-60">
+                        <Sparkles className="w-6 h-6" />
+                    </div>
+                    <div className="absolute bottom-20 left-4 text-yellow-400 animate-pulse opacity-40">
+                        <Sparkles className="w-4 h-4" />
                     </div>
 
-                    {/* Main Form Area */}
-                    <form onSubmit={handleLogin} className="space-y-5 flex-1 relative z-20">
-
-                        {/* Email Input */}
-                        <div className="space-y-1.5">
-                            <label className="text-xs font-semibold text-gray-300 ml-1 uppercase tracking-wider">E-mail</label>
-                            <div className="relative group/input">
-                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg blur opacity-20 group-focus-within/input:opacity-50 transition-opacity" />
-                                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within/input:text-pink-300 transition-colors z-10" />
-                                <input
-                                    type="email"
-                                    required
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    className="relative w-full bg-[#0a0a0a]/80 border border-white/10 text-gray-100 text-sm rounded-lg pl-10 pr-4 py-3 focus:outline-none focus:border-pink-500/50 focus:ring-1 focus:ring-pink-500/20 transition-all placeholder-gray-600 backdrop-blur-sm"
-                                    placeholder="treinador@exemplo.com"
-                                />
+                    {/* Cabeçalho */}
+                    <div className="pt-8 px-8 pb-4 text-center border-b border-yellow-500/20 relative">
+                        <div className="flex justify-center mb-2">
+                            <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-700 rounded-full flex items-center justify-center shadow-lg shadow-yellow-500/20">
+                                <Zap className="w-6 h-6 text-yellow-50 fill-yellow-100" />
                             </div>
                         </div>
+                        <h1 className="text-2xl font-bold font-['Poppins'] tracking-widest uppercase bg-gradient-to-b from-yellow-100 via-yellow-300 to-yellow-600 bg-clip-text text-transparent drop-shadow-sm">
+                            TCG Collection
+                        </h1>
+                        <p className="text-[10px] text-yellow-500/60 font-mono tracking-[0.2em] mt-1 uppercase">
+                            Acesso Premium
+                        </p>
+                    </div>
 
-                        {/* Password Input */}
-                        <div className="space-y-1.5">
-                            <label className="text-xs font-semibold text-gray-300 ml-1 uppercase tracking-wider">Senha</label>
-                            <div className="relative group/input">
-                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg blur opacity-20 group-focus-within/input:opacity-50 transition-opacity" />
-                                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within/input:text-pink-300 transition-colors z-10" />
-                                <input
-                                    type="password"
-                                    required
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    className="relative w-full bg-[#0a0a0a]/80 border border-white/10 text-gray-100 text-sm rounded-lg pl-10 pr-4 py-3 focus:outline-none focus:border-pink-500/50 focus:ring-1 focus:ring-pink-500/20 transition-all placeholder-gray-600 backdrop-blur-sm"
-                                    placeholder="••••••••"
-                                />
+                    {/* Área do Formulário */}
+                    <div className="flex-1 p-8 flex flex-col justify-center relative z-20">
+                        <form onSubmit={handleLogin} className="space-y-6">
+
+                            {/* Input E-mail */}
+                            <div className="space-y-2 group/field">
+                                <label className="text-xs font-semibold text-yellow-500/80 ml-1 uppercase tracking-wider flex items-center gap-2">
+                                    <span>E-mail</span>
+                                    <span className="h-px flex-1 bg-gradient-to-r from-yellow-900/50 to-transparent"></span>
+                                </label>
+                                <div className="relative">
+                                    <div className="absolute inset-0 bg-yellow-500/10 blur-md rounded-lg opacity-0 group-focus-within/field:opacity-100 transition-opacity duration-500" />
+                                    <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-yellow-600/70 group-focus-within/field:text-yellow-400 transition-colors z-10" />
+                                    <input
+                                        type="email"
+                                        required
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        className="relative w-full bg-[#151515] border border-yellow-700/30 text-yellow-100 text-sm rounded-lg pl-10 pr-4 py-3.5 focus:outline-none focus:border-yellow-500/70 focus:bg-[#1a1a10] transition-all placeholder-yellow-900/30 shadow-inner"
+                                        placeholder="seu@email.com"
+                                    />
+                                </div>
                             </div>
-                            {/* Forgot Password Link */}
-                            <div className="flex justify-end pt-1">
-                                <a href="#" className="text-[11px] text-gray-400 hover:text-pink-300 transition-colors hover:underline">
-                                    Esqueci minha senha
-                                </a>
+
+                            {/* Input Senha */}
+                            <div className="space-y-2 group/field">
+                                <label className="text-xs font-semibold text-yellow-500/80 ml-1 uppercase tracking-wider flex items-center gap-2">
+                                    <span>Senha</span>
+                                    <span className="h-px flex-1 bg-gradient-to-r from-yellow-900/50 to-transparent"></span>
+                                </label>
+                                <div className="relative">
+                                    <div className="absolute inset-0 bg-yellow-500/10 blur-md rounded-lg opacity-0 group-focus-within/field:opacity-100 transition-opacity duration-500" />
+                                    <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-yellow-600/70 group-focus-within/field:text-yellow-400 transition-colors z-10" />
+                                    <input
+                                        type="password"
+                                        required
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        className="relative w-full bg-[#151515] border border-yellow-700/30 text-yellow-100 text-sm rounded-lg pl-10 pr-4 py-3.5 focus:outline-none focus:border-yellow-500/70 focus:bg-[#1a1a10] transition-all placeholder-yellow-900/30 shadow-inner"
+                                        placeholder="••••••••"
+                                    />
+                                </div>
+                                <div className="flex justify-end">
+                                    <a href="#" className="text-[11px] text-yellow-600/70 hover:text-yellow-400 transition-colors cursor-pointer hover:underline decoration-yellow-600/50 underline-offset-2">
+                                        Esqueci minha senha
+                                    </a>
+                                </div>
                             </div>
+
+                            {/* Botão de Ação */}
+                            <button
+                                type="submit"
+                                disabled={isLoading}
+                                className="w-full mt-2 relative group/btn"
+                            >
+                                <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-600 to-amber-600 rounded-lg blur opacity-60 group-hover/btn:opacity-100 transition duration-300"></div>
+                                <div className="relative w-full bg-gradient-to-b from-yellow-400 via-yellow-500 to-amber-600 hover:from-yellow-300 hover:to-amber-500 text-black font-bold uppercase tracking-widest text-sm py-4 rounded-lg shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+                                    {isLoading ? (
+                                        <Loader2 className="w-5 h-5 animate-spin text-yellow-900" />
+                                    ) : (
+                                        <>
+                                            <span className="drop-shadow-sm text-yellow-950">Entrar</span>
+                                        </>
+                                    )}
+                                </div>
+                            </button>
+                        </form>
+                    </div>
+
+                    {/* Rodapé da Carta (Footer) */}
+                    <div className="p-4 border-t border-yellow-500/10 flex justify-between items-end text-[10px] font-mono text-yellow-700/60 bg-gradient-to-t from-yellow-900/20 to-transparent">
+                        <div className="flex flex-col">
+                            <span className="font-bold text-yellow-600">Hyper Rare</span>
+                            <span>253/151 • Gold Edition</span>
                         </div>
-
-                        {/* Submit Button */}
-                        <button
-                            type="submit"
-                            disabled={isLoading}
-                            className="w-full mt-8 relative overflow-hidden rounded-lg group/btn h-12 shadow-[0_4px_14px_0_rgba(236,72,153,0.39)] hover:shadow-[0_6px_20px_rgba(236,72,153,0.23)] hover:-translate-y-0.5 transition-all duration-300"
-                        >
-                            {/* Button Background - Heavy Gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 group-hover/btn:scale-[1.03] transition-transform duration-300" />
-
-                            {/* Texture/Noise on Button */}
-                            <div className="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none" />
-
-                            {/* Button Content */}
-                            <div className="relative flex items-center justify-center gap-3 font-bold tracking-widest text-white text-sm uppercase">
-                                {isLoading ? (
-                                    <Loader2 className="w-5 h-5 animate-spin" />
-                                ) : (
-                                    <>
-                                        <span>Entrar</span>
-                                        <Sparkles className="w-4 h-4 text-yellow-200 animate-pulse" />
-                                    </>
-                                )}
-                            </div>
-                        </button>
-                    </form>
-
-                    {/* Footer - Dynamic Year */}
-                    <div className="mt-6 pt-4 border-t border-white/5 flex flex-col items-center gap-1 text-[10px] text-gray-500 font-mono relative z-20">
-                        <div className="flex w-full justify-between opacity-70">
-                            <span>253/250 • Hyper Rare</span>
-                            <span>★</span>
-                        </div>
-                        <span className="mt-1 hover:text-gray-300 transition-colors cursor-default">
+                        <span className="opacity-80">
                             © {currentYear} Parametrus.com
                         </span>
                     </div>
                 </div>
 
-                {/* Glossy Overlay (Reflection) - Diagonal Swipe */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-white/5 to-transparent pointer-events-none rounded-2xl z-30 mix-blend-overlay" />
-
-                {/* Holo Sparkles (Static CSS representation, in lieu of JS particles for now) */}
-                <div className="absolute top-10 right-10 w-20 h-20 bg-purple-500/20 blur-3xl rounded-full pointer-events-none animate-pulse" />
-                <div className="absolute bottom-10 left-10 w-24 h-24 bg-pink-500/20 blur-3xl rounded-full pointer-events-none animate-pulse delay-700" />
+                {/* Overlay de Reflexo Holográfico (Foil Effect) */}
+                <div className="absolute inset-0 rounded-[20px] pointer-events-none z-30 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[length:200%_200%] animate-shimmer" />
             </div>
         </div>
     );

@@ -5,6 +5,14 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] - 13/02/2026 19:57
+
+### Changed
+- Redesign completo da interface de Login para o tema "Hyper Rare Gold Edition".
+- Nova paleta de cores douradas (Gold/Amber) substituindo o tema Rainbow.
+- Adição de efeitos de partículas douradas (estrelas) e texturas de folha de ouro.
+- Ajuste de contraste par fundo escuro profundo (`#0a0a0a`) com tipografia dourada para legibilidade.
+
 ## [0.2.1] - 13/02/2026 19:55
 
 ### Changed
