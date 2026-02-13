@@ -5,6 +5,12 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.1] - 13/02/2026 21:00
+
+### Fixed
+- Correção crítica no arquivo `tailwind.config.js`: restauração da estrutura correta do objeto de configuração. O erro de sintaxe impedia o processamento do CSS e causava falha na renderização da aplicação.
+- Restauração do bloco `keyframes` que havia sido removido acidentalmente durante a refatoração anterior.
+
 ## [0.5.0] - 13/02/2026 20:45
 
 ### Removed

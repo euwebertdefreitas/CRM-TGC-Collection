@@ -23,9 +23,8 @@ export default {
           '100%': { backgroundPosition: '1000px 0' },
         },
       }
-    }
+    },
   },
-},
-plugins: [],
+  plugins: [],
 }
 
