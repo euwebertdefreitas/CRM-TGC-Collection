@@ -5,6 +5,12 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.1] - 13/02/2026 20:25
+
+### Changed
+- Atualização do título da página (aba do navegador) de "crm-tgc-collection" para "TCG Collection".
+- Substituição do favicon padrão (Vite) por um ícone SVG de Pokébola personalizado.
+
 ## [0.4.0] - 13/02/2026 20:20
 
 ### Added
