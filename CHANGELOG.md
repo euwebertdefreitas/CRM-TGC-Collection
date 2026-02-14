@@ -5,6 +5,12 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.4] - 13/02/2026 22:45
+
+### Fixed
+- Redirecionamento de Notícias: Atualizados os links do feed de notícias para apontarem diretamente para os artigos e matérias específicas, em vez de apenas para a página inicial dos veículos de comunicação.
+
+
 ## [0.10.3] - 13/02/2026 22:40
 
 ### Changed

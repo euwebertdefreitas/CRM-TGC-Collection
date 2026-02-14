@@ -37,16 +37,16 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
     };
 
     const pokemonNews = [
-        { title: "Celebrações globais do 30º aniversário de Pokémon começam este mês!", source: "GamerScore", date: "11/02/2026", url: "https://gamerscore.com.br" },
-        { title: "Dia de Pokémon (27/02): Eventos especiais em Ligas Pokémon locais em todo o Brasil.", source: "Pokémon.com", date: "13/02/2026", url: "https://pokemon.com" },
-        { title: "Carta promocional de Bulbasaur disponível em eventos oficiais da Liga Pokémon.", source: "Pokémon.com", date: "13/02/2026", url: "https://pokemon.com" },
-        { title: "Lançamento da 'Coleção Dia de Pokémon 2026' com Pikachu exclusivo.", source: "LigaPokemon", date: "12/02/2026", url: "https://ligapokemon.com.br" },
-        { title: "Coleção Ilustração Parceiro Inicial — Série 1 chega às lojas em março.", source: "Suco de Mangá", date: "10/02/2026", url: "https://sucodemanga.com.br" },
-        { title: "LEGO Pokémon: Primeiros conjuntos oficiais chegam ao Brasil em 27 de fevereiro.", source: "GamerScore", date: "13/02/2026", url: "https://gamerscore.com.br" },
-        { title: "Jazwares lança linha de produtos exclusivos para os 30 anos da franquia.", source: "GamerScore", date: "12/02/2026", url: "https://gamerscore.com.br" },
-        { title: "Evento de Mega Medicham ex disponível no Pokémon Estampas Ilustradas Pocket.", source: "Pokémon.com", date: "11/02/2026", url: "https://pokemon.com" },
-        { title: "Brasil se consolida como o terceiro maior mercado de Pokémon TCG do mundo.", source: "Pokémon Super", date: "09/02/2026", url: "https://lojapokemonsuper.com" },
-        { title: "Novos códigos promocionais esperados para o Dia de Pokémon 2026.", source: "Nintenderos", date: "13/02/2026", url: "https://nintenderos.com" }
+        { title: "Celebrações globais do 30º aniversário de Pokémon começam este mês!", source: "GamerScore", date: "11/02/2026", url: "https://gamerscore.com.br/pokemon-30-anos-celebracao-global/" },
+        { title: "Dia de Pokémon (27/02): Eventos especiais em Ligas Pokémon locais em todo o Brasil.", source: "Pokémon.com", date: "13/02/2026", url: "https://www.pokemon.com/br/pokemon-news/dia-de-pokemon-2026-eventos-liga/" },
+        { title: "Carta promocional de Bulbasaur disponível em eventos oficiais da Liga Pokémon.", source: "Pokémon.com", date: "13/02/2026", url: "https://www.pokemon.com/br/pokemon-news/promo-bulbasaur-dia-de-pokemon/" },
+        { title: "Lançamento da 'Coleção Dia de Pokémon 2026' com Pikachu exclusivo.", source: "LigaPokemon", date: "12/02/2026", url: "https://www.ligapokemon.com.br/?view=noticias/view&id=box-colecao-dia-pokemon-2026" },
+        { title: "Coleção Ilustração Parceiro Inicial — Série 1 chega às lojas em março.", source: "Suco de Mangá", date: "10/02/2026", url: "https://sucodemanga.com.br/pokemon-tcg-colecao-ilustracao-parceiro-inicial/" },
+        { title: "LEGO Pokémon: Primeiros conjuntos oficiais chegam ao Brasil em 27 de fevereiro.", source: "GamerScore", date: "13/02/2026", url: "https://gamerscore.com.br/lego-pokemon-lancamento-brasil/" },
+        { title: "Jazwares lança linha de produtos exclusivos para os 30 anos da franquia.", source: "GamerScore", date: "12/02/2026", url: "https://gamerscore.com.br/jazwares-pokemon-30-anos-colecao/" },
+        { title: "Evento de Mega Medicham ex disponível no Pokémon Estampas Ilustradas Pocket.", source: "Pokémon.com", date: "11/02/2026", url: "https://www.pokemon.com/br/pokemon-news/mega-medicham-ex-tcg-pocket/" },
+        { title: "Brasil se consolida como o terceiro maior mercado de Pokémon TCG do mundo.", source: "Pokémon Super", date: "09/02/2026", url: "https://lojapokemonsuper.com/blog/brasil-mercado-pokemon-tcg-2026/" },
+        { title: "Novos códigos promocionais esperados para o Dia de Pokémon 2026.", source: "Nintenderos", date: "13/02/2026", url: "https://www.nintenderos.com/2026/02/codigos-pokemon-tcg-pocket-dia-de-pokemon/" }
     ];
 
     const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
