@@ -5,6 +5,13 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.6] - 13/02/2026 22:05
+
+### Changed
+- Simplificação da Saudação: As mensagens de "Bem-Vindo" e saudação adaptativa foram combinadas em uma única linha (ex: "Boa noite, Admin!") para uma interface mais limpa e moderna.
+- Refatoração da Lógica de Saudação: Função de saudação simplificada para retornar apenas o período do dia.
+
+
 ## [0.9.5] - 13/02/2026 21:58
 
 ### Changed

@@ -30,9 +30,9 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
 
     const getGreeting = () => {
         const hour = dateTime.getHours();
-        if (hour >= 5 && hour < 12) return 'Bom dia! Pronta para mais uma jornada?';
-        if (hour >= 12 && hour < 18) return 'Boa tarde! Como vai a sua coleção?';
-        return 'Boa noite! Que tal organizar suas cartas?';
+        if (hour >= 5 && hour < 12) return 'Bom dia';
+        if (hour >= 12 && hour < 18) return 'Boa tarde';
+        return 'Boa noite';
     };
 
     return (
@@ -90,11 +90,8 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
                         <div className="relative z-10 flex-1 flex flex-col">
                             <div className="mb-6 sm:mb-10">
                                 <h2 className="text-lg sm:text-2xl font-black text-slate-800 tracking-tight">
-                                    Bem-Vindo {userName}!
+                                    {getGreeting()}, {userName}!
                                 </h2>
-                                <p className="text-sm sm:text-xl text-[#1e40af] font-bold mt-1">
-                                    {getGreeting()}
-                                </p>
                                 <p className="text-[10px] sm:text-sm text-slate-500 border-b border-slate-100 pb-4 sm:pb-6 uppercase tracking-[0.2em] font-bold mt-4">Seu Dashboard</p>
                             </div>
 
