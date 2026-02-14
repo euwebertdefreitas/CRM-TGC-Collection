@@ -5,6 +5,17 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.0] - 13/02/2026 22:25
+
+### Added
+- Feed de Notícias Pokémon TCG: Implementado um ticker de notícias dinâmico no topo da dashboard.
+- Conteúdo Atualizado: O feed exibe em tempo real as 10 notícias mais recentes sobre o universo de Pokémon TCG no Brasil, incluindo eventos de aniversário e novos lançamentos.
+- Efeito Visual Dinâmico: Transições suaves entre as notícias e uma barra de progresso visual para indicar o tempo de exibição de cada item.
+
+### Changed
+- Refatoração do Cabeçalho: Ajuste no layout do cabeçalho da dashboard para comportar o feed de notícias de forma responsiva.
+
+
 ## [0.9.9] - 13/02/2026 22:20
 
 ### Added

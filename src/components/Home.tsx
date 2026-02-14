@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { LogOut, User, Calendar, Clock } from 'lucide-react';
+import { LogOut, User, Calendar, Clock, Newspaper, ChevronRight } from 'lucide-react';
 
 interface HomeProps {
     onLogout: () => void;
@@ -35,6 +35,28 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
         if (hour >= 12 && hour < 18) return 'Boa tarde';
         return 'Boa noite';
     };
+
+    const pokemonNews = [
+        "Celebrações globais do 30º aniversário de Pokémon começam este mês!",
+        "Dia de Pokémon (27/02): Eventos especiais em Ligas Pokémon locais em todo o Brasil.",
+        "Carta promocional de Bulbasaur disponível em eventos oficiais da Liga Pokémon.",
+        "Lançamento da 'Coleção Dia de Pokémon 2026' com Pikachu holográfico exclusivo.",
+        "Coleção Ilustração Parceiro Inicial — Série 1 chega às lojas em março.",
+        "LEGO Pokémon: Primeiros conjuntos oficiais chegam ao Brasil em 27 de fevereiro.",
+        "Jazwares anuncia linha de pelúcias exclusivas para os 30 anos da franquia.",
+        "Evento Mega Medicham ex disponível no aplicativo Pokémon Estampas Ilustradas Pocket.",
+        "Mercado Brasileiro: Brasil é agora o 3º maior mercado de Pokémon TCG do mundo.",
+        "Super Bowl LX: Comercial do 30º aniversário de Pokémon emociona fãs globais."
+    ];
+
+    const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
+
+    useEffect(() => {
+        const newsTimer = setInterval(() => {
+            setCurrentNewsIndex((prev) => (prev + 1) % pokemonNews.length);
+        }, 5000);
+        return () => clearInterval(newsTimer);
+    }, [pokemonNews.length]);
 
     return (
         <div className="w-full flex-1 flex flex-col bg-slate-50 overflow-hidden">
@@ -103,57 +125,94 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
                         {/* Background Decoration */}
                         <div className="absolute top-0 right-0 w-48 sm:w-96 h-48 sm:h-96 bg-blue-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
-                        <div className="relative z-10 flex-1 flex flex-col">
-                            {currentTab === 'Home' ? (
-                                <>
-                                    <div className="mb-6 sm:mb-10">
+                        {currentTab === 'Home' ? (
+                            <>
+                                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-6 sm:mb-10">
+                                    <div>
                                         <h2 className="text-lg sm:text-2xl font-black text-slate-800 tracking-tight">
                                             {getGreeting()}, {userName}!
                                         </h2>
                                         <p className="text-[10px] sm:text-sm text-slate-500 border-b border-slate-100 pb-4 sm:pb-6 uppercase tracking-[0.2em] font-bold mt-4">Seu Dashboard</p>
                                     </div>
 
-                                    {/* Proportional Grid */}
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 flex-1 content-start">
-                                        {/* Coleção Total - Special Styling */}
-                                        <div className="bg-[#1e40af] border-[3px] border-[#fbbf24] rounded-xl sm:rounded-2xl p-4 sm:p-8 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-center relative overflow-hidden cursor-pointer" onClick={() => setCurrentTab('Coleção')}>
-                                            <div className="absolute inset-0 opacity-10 bg-[conic-gradient(from_0deg_at_50%_50%,_transparent_0deg,_rgba(255,255,255,0.1)_30deg,_transparent_360deg)] animate-[spin_60s_linear_infinite] pointer-events-none"></div>
-                                            <span className="text-[10px] sm:text-xs font-black text-white uppercase tracking-[0.2em] mb-2 sm:mb-4 relative z-10">Coleção Total</span>
-                                            <p className="text-xl sm:text-4xl font-black text-[#fbbf24] tracking-tight relative z-10">1.248</p>
-                                            <div className="mt-4 sm:mt-6 h-1 w-12 rounded-full bg-[#fbbf24] group-hover:w-full transition-all duration-500 relative z-10"></div>
-                                        </div>
-
-                                        {[
-                                            { label: 'Cartas Raras', value: '156', color: 'text-amber-600', accent: 'bg-amber-400' },
-                                            { label: 'Última Captura', value: 'Mewtwo EX', color: 'text-purple-600', accent: 'bg-purple-400' }
-                                        ].map((stat, i) => (
-                                            <div key={i} className="bg-white border-[3px] border-[#fbbf24] rounded-xl sm:rounded-2xl p-4 sm:p-8 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-center cursor-pointer">
-                                                <span className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-2 sm:mb-4">{stat.label}</span>
-                                                <p className={`text-xl sm:text-4xl font-black ${stat.color} tracking-tight`}>{stat.value}</p>
-                                                <div className={`mt-4 sm:mt-6 h-1 w-12 rounded-full ${stat.accent} group-hover:w-full transition-all duration-500`}></div>
+                                    {/* News Feed - Opposite to Greeting */}
+                                    <div className="flex-1 max-w-xl bg-slate-50 border-2 border-blue-100 rounded-2xl p-4 relative overflow-hidden group hover:border-[#fbbf24] transition-all duration-500 shadow-sm self-start lg:self-center">
+                                        <div className="flex items-center gap-3 mb-2">
+                                            <div className="bg-blue-600 p-1.5 rounded-lg">
+                                                <Newspaper className="w-4 h-4 text-white" />
                                             </div>
-                                        ))}
+                                            <span className="text-[10px] font-black text-blue-900 uppercase tracking-widest">Pokémon TCG News Brasil</span>
+                                            <div className="ml-auto flex gap-1">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></div>
+                                                <span className="text-[8px] font-bold text-slate-400">AO VIVO</span>
+                                            </div>
+                                        </div>
+                                        <div className="h-10 relative overflow-hidden">
+                                            {pokemonNews.map((news, idx) => (
+                                                <div
+                                                    key={idx}
+                                                    className={`absolute inset-0 flex items-center gap-3 transition-all duration-700 transform ${idx === currentNewsIndex
+                                                        ? 'opacity-100 translate-y-0 scale-100'
+                                                        : 'opacity-0 translate-y-8 scale-95'
+                                                        }`}
+                                                >
+                                                    <ChevronRight className="w-4 h-4 text-[#fbbf24] shrink-0" />
+                                                    <p className="text-xs sm:text-sm font-bold text-slate-700 leading-tight line-clamp-2">
+                                                        {news}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                        {/* Progress bar for the news loop */}
+                                        <div className="absolute bottom-0 left-0 h-0.5 bg-[#fbbf24]/30 w-full overflow-hidden">
+                                            <div
+                                                className="h-full bg-[#fbbf24] transition-all duration-[5000ms] linear"
+                                                style={{ width: '100%', transform: `translateX(-${100 - ((currentNewsIndex + 1) / pokemonNews.length * 100)}%)` }}
+                                            ></div>
+                                        </div>
                                     </div>
-                                </>
-                            ) : (
-                                <div className="flex-1 flex flex-col items-center justify-center text-center animate-in fade-in zoom-in duration-300">
-                                    <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mb-6 border-2 border-dashed border-blue-200">
-                                        <User className="w-10 h-10 text-blue-300" />
-                                    </div>
-                                    <h2 className="text-2xl font-black text-slate-800 mb-2 uppercase tracking-tighter">{currentTab}</h2>
-                                    <p className="text-slate-500 max-w-md">Esta área está sendo preparada para receber suas informações de {currentTab.toLowerCase()}.</p>
-                                    <button
-                                        onClick={() => setCurrentTab('Home')}
-                                        className="mt-8 px-6 py-2 bg-[#1e40af] text-white rounded-lg font-bold uppercase text-xs tracking-widest hover:bg-blue-800 transition-colors shadow-lg"
-                                    >
-                                        Voltar ao Dashboard
-                                    </button>
                                 </div>
-                            )}
 
-                            {/* Filler Space to maintain proportion */}
-                            <div className="flex-1 min-h-[100px] sm:min-h-[200px]"></div>
-                        </div>
+                                {/* Proportional Grid */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 flex-1 content-start">
+                                    {/* Coleção Total - Special Styling */}
+                                    <div className="bg-[#1e40af] border-[3px] border-[#fbbf24] rounded-xl sm:rounded-2xl p-4 sm:p-8 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-center relative overflow-hidden cursor-pointer" onClick={() => setCurrentTab('Coleção')}>
+                                        <div className="absolute inset-0 opacity-10 bg-[conic-gradient(from_0deg_at_50%_50%,_transparent_0deg,_rgba(255,255,255,0.1)_30deg,_transparent_360deg)] animate-[spin_60s_linear_infinite] pointer-events-none"></div>
+                                        <span className="text-[10px] sm:text-xs font-black text-white uppercase tracking-[0.2em] mb-2 sm:mb-4 relative z-10">Coleção Total</span>
+                                        <p className="text-xl sm:text-4xl font-black text-[#fbbf24] tracking-tight relative z-10">1.248</p>
+                                        <div className="mt-4 sm:mt-6 h-1 w-12 rounded-full bg-[#fbbf24] group-hover:w-full transition-all duration-500 relative z-10"></div>
+                                    </div>
+
+                                    {[
+                                        { label: 'Cartas Raras', value: '156', color: 'text-amber-600', accent: 'bg-amber-400' },
+                                        { label: 'Última Captura', value: 'Mewtwo EX', color: 'text-purple-600', accent: 'bg-purple-400' }
+                                    ].map((stat, i) => (
+                                        <div key={i} className="bg-white border-[3px] border-[#fbbf24] rounded-xl sm:rounded-2xl p-4 sm:p-8 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-center cursor-pointer">
+                                            <span className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-2 sm:mb-4">{stat.label}</span>
+                                            <p className={`text-xl sm:text-4xl font-black ${stat.color} tracking-tight`}>{stat.value}</p>
+                                            <div className={`mt-4 sm:mt-6 h-1 w-12 rounded-full ${stat.accent} group-hover:w-full transition-all duration-500`}></div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </>
+                        ) : (
+                            <div className="flex-1 flex flex-col items-center justify-center text-center animate-in fade-in zoom-in duration-300">
+                                <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mb-6 border-2 border-dashed border-blue-200">
+                                    <User className="w-10 h-10 text-blue-300" />
+                                </div>
+                                <h2 className="text-2xl font-black text-slate-800 mb-2 uppercase tracking-tighter">{currentTab}</h2>
+                                <p className="text-slate-500 max-w-md">Esta área está sendo preparada para receber suas informações de {currentTab.toLowerCase()}.</p>
+                                <button
+                                    onClick={() => setCurrentTab('Home')}
+                                    className="mt-8 px-6 py-2 bg-[#1e40af] text-white rounded-lg font-bold uppercase text-xs tracking-widest hover:bg-blue-800 transition-colors shadow-lg"
+                                >
+                                    Voltar ao Dashboard
+                                </button>
+                            </div>
+                        )}
+
+                        {/* Filler Space to maintain proportion */}
+                        <div className="flex-1 min-h-[100px] sm:min-h-[200px]"></div>
                     </div>
                 </div>
             </main>
