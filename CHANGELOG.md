@@ -5,6 +5,16 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.1] - 13/02/2026 22:45
+
+### Fixed
+- Responsividade Global: Toda a interface foi adaptada para dispositivos desktop e mobile.
+- Ajuste no Card de Login: Agora utiliza dimensões proporcionais (`aspect-ratio`) para se adaptar a telas menores sem perder a fidelidade ao verso da carta Pokémon.
+- Interface da Home: Refatorada para preencher 100% da área disponível, utilizando flexbox e grids adaptativos.
+- Top Bar Adaptativo: Elementos como o relógio e informações detalhadas do usuário são ocultados ou redimensionados dinamicamente em telas pequenas para manter a usabilidade.
+- Remoção de restrições de overflow globais para permitir rolagem natural em dispositivos mobile.
+
+
 ## [0.9.0] - 13/02/2026 22:30
 
 ### Added

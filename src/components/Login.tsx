@@ -33,9 +33,9 @@ export const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
     };
 
     return (
-        <div className="flex items-center justify-center p-4">
+        <div className="flex items-center justify-center w-full max-w-[22rem] mx-auto">
             {/* Card Container */}
-            <div className="relative w-[22rem] h-[31rem] rounded-[18px] bg-[#1d4ed8] p-[10px] shadow-2xl transition-transform duration-500 hover:scale-[1.02] group">
+            <div className="relative w-full aspect-[22/31] min-h-[480px] rounded-[18px] bg-[#1d4ed8] p-[8px] sm:p-[10px] shadow-2xl transition-transform duration-500 hover:scale-[1.02] group">
 
                 {/* Decorative Border */}
                 <div className="absolute inset-0 rounded-[18px] border-[8px] border-[#fbbf24] pointer-events-none z-20 shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]"></div>

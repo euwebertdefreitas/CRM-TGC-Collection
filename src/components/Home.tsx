@@ -29,18 +29,18 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
     };
 
     return (
-        <div className="w-full h-full flex flex-col bg-slate-50">
+        <div className="w-full flex-1 flex flex-col bg-slate-50 overflow-hidden">
             {/* Top Bar */}
-            <header className="w-full h-16 bg-[#1e40af] border-b-[3px] border-[#fbbf24] shadow-lg flex items-center justify-between px-6 z-20">
-                <div className="flex items-center gap-3">
-                    <img src="/logo-pokemon-tcg.png" alt="Logo" className="h-10 w-auto" />
-                    <div className="h-8 w-px bg-white/20 mx-2 hidden sm:block"></div>
-                    <h1 className="text-white font-bold tracking-tight hidden sm:block">CRM Collection</h1>
+            <header className="w-full h-16 sm:h-20 bg-[#1e40af] border-b-[3px] border-[#fbbf24] shadow-lg flex items-center justify-between px-4 sm:px-8 z-20 shrink-0">
+                <div className="flex items-center gap-2 sm:gap-4 overflow-hidden">
+                    <img src="/logo-pokemon-tcg.png" alt="Logo" className="h-8 sm:h-12 w-auto shrink-0" />
+                    <div className="h-8 w-px bg-white/20 mx-1 hidden sm:block"></div>
+                    <h1 className="text-white font-bold tracking-tight text-sm sm:text-base whitespace-nowrap hidden xs:block">CRM Collection</h1>
                 </div>
 
-                <div className="flex items-center gap-6">
-                    {/* Real-time Clock/Report */}
-                    <div className="hidden md:flex flex-col items-end text-white/90 font-mono text-xs">
+                <div className="flex items-center gap-3 sm:gap-6">
+                    {/* Real-time Clock/Report - Hidden on very small screens, visible on md */}
+                    <div className="hidden md:flex flex-col items-end text-white/90 font-mono text-[10px] sm:text-xs">
                         <div className="flex items-center gap-2">
                             <Calendar className="w-3 h-3 text-yellow-400" />
                             <span className="capitalize">{formatDay(dateTime)}, {formatDate(dateTime)}</span>
@@ -51,59 +51,66 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
                         </div>
                     </div>
 
-                    <div className="h-8 w-px bg-white/20 mx-2"></div>
+                    <div className="h-8 w-px bg-white/20 mx-1 hidden sm:block"></div>
 
                     {/* User Profile & Logout */}
-                    <div className="flex items-center gap-4">
-                        <div className="flex flex-col items-end">
-                            <span className="text-white font-semibold text-sm leading-none">{userName}</span>
-                            <span className="text-blue-200 text-[10px] uppercase tracking-wider leading-tight mt-1">Treinador Mestre</span>
+                    <div className="flex items-center gap-2 sm:gap-4">
+                        <div className="flex flex-col items-end hidden sm:flex">
+                            <span className="text-white font-semibold text-xs sm:text-sm leading-none">{userName}</span>
+                            <span className="text-blue-200 text-[9px] sm:text-[10px] uppercase tracking-wider leading-tight mt-1">Treinador Mestre</span>
                         </div>
-                        <div className="w-10 h-10 rounded-full bg-blue-900 border-2 border-yellow-400 flex items-center justify-center overflow-hidden shadow-inner">
-                            <User className="text-white w-6 h-6" />
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-900 border-2 border-yellow-400 flex items-center justify-center overflow-hidden shadow-inner shrink-0">
+                            <User className="text-white w-4 h-4 sm:w-6 sm:h-6" />
                         </div>
                         <button
                             onClick={onLogout}
-                            className="p-2 rounded-lg bg-red-600/20 hover:bg-red-600 text-red-100 hover:text-white transition-all duration-300 group"
+                            className="p-1.5 sm:p-2 rounded-lg bg-red-600/20 hover:bg-red-600 text-red-100 hover:text-white transition-all duration-300 group"
                             title="Sair do Sistema"
                         >
-                            <LogOut className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                            <LogOut className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
                         </button>
                     </div>
                 </div>
             </header>
 
-            {/* Main Content Area */}
-            <main className="flex-1 p-8 overflow-y-auto custom-scrollbar">
-                <div className="max-w-7xl mx-auto">
-                    <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 min-h-[400px] relative overflow-hidden">
+            {/* Main Content Area - Filling available space */}
+            <main className="flex-1 p-4 sm:p-8 overflow-y-auto custom-scrollbar bg-slate-100/50">
+                <div className="max-w-7xl mx-auto h-full flex flex-col">
+                    <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 p-4 sm:p-10 flex-1 relative overflow-hidden flex flex-col">
                         {/* Background Decoration */}
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                        <div className="absolute top-0 right-0 w-48 sm:w-96 h-48 sm:h-96 bg-blue-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
-                        <div className="relative z-10">
-                            <h2 className="text-3xl font-bold text-slate-800 mb-2">Bem-vindo de volta, {userName}!</h2>
-                            <p className="text-slate-500 mb-8 border-b border-slate-100 pb-4">Esta é a sua página principal do CRM TCG Collection.</p>
+                        <div className="relative z-10 flex-1 flex flex-col">
+                            <div className="mb-6 sm:mb-10">
+                                <h2 className="text-xl sm:text-4xl font-extrabold text-slate-800 mb-1 sm:mb-2 tracking-tight">Bem-vindo de volta, {userName}!</h2>
+                                <p className="text-xs sm:text-lg text-slate-500 border-b border-slate-100 pb-4 sm:pb-6 uppercase tracking-wider font-medium">Dashboard de Controle TCG</p>
+                            </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {/* Proportional Grid */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 flex-1 content-start">
                                 {[
-                                    { label: 'Coleção Total', value: '1.248', color: 'bg-blue-500' },
-                                    { label: 'Cartas Raras', value: '156', color: 'bg-yellow-500' },
-                                    { label: 'Última Captura', value: 'Mewtwo EX', color: 'bg-purple-500' }
+                                    { label: 'Coleção Total', value: '1.248', color: 'text-blue-600', icon: 'bg-blue-50' },
+                                    { label: 'Cartas Raras', value: '156', color: 'text-amber-600', icon: 'bg-amber-50' },
+                                    { label: 'Última Captura', value: 'Mewtwo EX', color: 'text-purple-600', icon: 'bg-purple-50' }
                                 ].map((stat, i) => (
-                                    <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-6 hover:shadow-md transition-shadow">
-                                        <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">{stat.label}</span>
-                                        <p className={`text-2xl font-black mt-1 ${stat.color.replace('bg-', 'text-')}`}>{stat.value}</p>
+                                    <div key={i} className="bg-white border border-slate-100 rounded-xl sm:rounded-2xl p-4 sm:p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-center">
+                                        <span className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-2 sm:mb-4">{stat.label}</span>
+                                        <p className={`text-xl sm:text-4xl font-black ${stat.color} tracking-tight`}>{stat.value}</p>
+                                        <div className={`mt-4 sm:mt-6 h-1 w-12 rounded-full ${stat.icon.replace('bg-', 'bg-opacity-50 bg-')} group-hover:w-full transition-all duration-500`}></div>
                                     </div>
                                 ))}
                             </div>
+
+                            {/* Filler Space to maintain proportion */}
+                            <div className="flex-1 min-h-[100px] sm:min-h-[200px]"></div>
                         </div>
                     </div>
                 </div>
             </main>
 
-            {/* Footer Wrapper */}
-            <footer className="w-full py-3 px-6 bg-white border-t border-slate-200 text-center text-[10px] text-slate-400 font-mono tracking-widest">
-                © 2026 CRM TCG COLLECTION • DESENVOLVIMENTO ADMIN MODE
+            {/* Footer Wrapper - Fixed at bottom */}
+            <footer className="w-full py-2 sm:py-3 px-6 bg-white border-t border-slate-200 text-center text-[8px] sm:text-[10px] text-slate-400 font-mono tracking-widest shrink-0">
+                © 2026 CRM TCG COLLECTION • MONITORAMENTO GLOBAL ATIVO
             </footer>
         </div>
     );
