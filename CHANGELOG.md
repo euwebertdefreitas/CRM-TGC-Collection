@@ -5,6 +5,14 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.4] - 13/02/2026 22:00
+
+### Changed
+- Refinamento da Saudação: A mensagem adaptativa foi movida para uma nova linha abaixo do nome do usuário.
+- Ajuste de Tipografia: Redução proporcional do tamanho das fontes nas mensagens de boas-vindas e saudação para um visual mais equilibrado.
+- Atualização do Rodapé: Removido o texto de monitoramento e adicionada a atribuição "Parametrus.com - Todos os direitos reservados".
+
+
 ## [0.9.3] - 13/02/2026 21:55
 
 ### Changed

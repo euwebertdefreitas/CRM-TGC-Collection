@@ -89,10 +89,13 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
 
                         <div className="relative z-10 flex-1 flex flex-col">
                             <div className="mb-6 sm:mb-10">
-                                <h2 className="text-xl sm:text-4xl font-extrabold text-slate-800 mb-1 sm:mb-2 tracking-tight">
-                                    Bem-Vindo {userName}! <span className="text-[#1e40af] block sm:inline">{getGreeting()}</span>
+                                <h2 className="text-lg sm:text-2xl font-black text-slate-800 tracking-tight">
+                                    Bem-Vindo {userName}!
                                 </h2>
-                                <p className="text-xs sm:text-lg text-slate-500 border-b border-slate-100 pb-4 sm:pb-6 uppercase tracking-wider font-medium">Dashboard de Controle TCG</p>
+                                <p className="text-sm sm:text-xl text-[#1e40af] font-bold mt-1">
+                                    {getGreeting()}
+                                </p>
+                                <p className="text-[10px] sm:text-sm text-slate-500 border-b border-slate-100 pb-4 sm:pb-6 uppercase tracking-[0.2em] font-bold mt-4">Dashboard de Controle TCG</p>
                             </div>
 
                             {/* Proportional Grid */}
@@ -126,7 +129,7 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
 
             {/* Footer Wrapper - Fixed at bottom */}
             <footer className="w-full py-2 sm:py-3 px-6 bg-white border-t border-slate-200 text-center text-[8px] sm:text-[10px] text-slate-400 font-mono tracking-widest shrink-0">
-                © 2026 CRM TCG COLLECTION • MONITORAMENTO GLOBAL ATIVO
+                © 2026 CRM TCG COLLECTION | Parametrus.com - Todos os direitos reservados.
             </footer>
         </div>
     );
