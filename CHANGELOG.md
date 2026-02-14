@@ -5,6 +5,19 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.0] - 13/02/2026 21:30
+
+### Changed
+- Redesign Completo da Interface de Login ("Verso da Carta"):
+    - O tema "Hyper Rare Gold" foi substituído por uma estética inspirada no verso clássico das cartas Pokémon TCG.
+    - Fundo do cartão agora é azul profundo com efeito de redemoinho/estrela (starburst) animado sutilmente.
+    - Implementação de borda sólida (amarelo/gold) e tipografia "Pokemon Logo style".
+    - Inputs e formulário adaptados com transparência e desfoque (glassmorphism) para se integrarem ao fundo azul.
+- Refatoração do Tema Global:
+    - Alteração do fundo da aplicação para um tema claro (`light mode`)Minimalista (#f8fafc) para contrastar com o novo cartão azul.
+- Melhoria de UX:
+    - Implementação de scrollbar moderna e customizada no widget de Changelog e globalmente.
+
 ## [0.6.1] - 13/02/2026 21:15
 
 ### Changed
