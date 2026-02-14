@@ -8,6 +8,7 @@ interface HomeProps {
 
 export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
     const [dateTime, setDateTime] = useState(new Date());
+    const [currentTab, setCurrentTab] = useState<'Home' | 'Perfil' | 'Coleção' | 'Configurações'>('Home');
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -47,9 +48,13 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
 
                         <nav className="hidden lg:flex items-center gap-6 ml-6">
                             {['Home', 'Perfil', 'Coleção', 'Configurações'].map((item) => (
-                                <button key={item} className="text-white hover:text-[#fbbf24] text-[11px] sm:text-xs uppercase tracking-[0.15em] font-black transition-all duration-300 relative group">
+                                <button
+                                    key={item}
+                                    onClick={() => setCurrentTab(item as any)}
+                                    className={`uppercase tracking-[0.15em] font-black transition-all duration-300 relative group text-[11px] sm:text-xs ${currentTab === item ? 'text-[#fbbf24]' : 'text-white hover:text-[#fbbf24]'}`}
+                                >
                                     {item}
-                                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#fbbf24] transition-all duration-300 group-hover:w-full"></span>
+                                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-[#fbbf24] transition-all duration-300 ${currentTab === item ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
                                 </button>
                             ))}
                         </nav>
@@ -99,34 +104,52 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
                         <div className="absolute top-0 right-0 w-48 sm:w-96 h-48 sm:h-96 bg-blue-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
                         <div className="relative z-10 flex-1 flex flex-col">
-                            <div className="mb-6 sm:mb-10">
-                                <h2 className="text-lg sm:text-2xl font-black text-slate-800 tracking-tight">
-                                    {getGreeting()}, {userName}!
-                                </h2>
-                                <p className="text-[10px] sm:text-sm text-slate-500 border-b border-slate-100 pb-4 sm:pb-6 uppercase tracking-[0.2em] font-bold mt-4">Seu Dashboard</p>
-                            </div>
-
-                            {/* Proportional Grid */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 flex-1 content-start">
-                                {/* Coleção Total - Special Styling */}
-                                <div className="bg-[#1e40af] border-[3px] border-[#fbbf24] rounded-xl sm:rounded-2xl p-4 sm:p-8 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-center relative overflow-hidden">
-                                    <div className="absolute inset-0 opacity-10 bg-[conic-gradient(from_0deg_at_50%_50%,_transparent_0deg,_rgba(255,255,255,0.1)_30deg,_transparent_360deg)] animate-[spin_60s_linear_infinite] pointer-events-none"></div>
-                                    <span className="text-[10px] sm:text-xs font-black text-white uppercase tracking-[0.2em] mb-2 sm:mb-4 relative z-10">Coleção Total</span>
-                                    <p className="text-xl sm:text-4xl font-black text-[#fbbf24] tracking-tight relative z-10">1.248</p>
-                                    <div className="mt-4 sm:mt-6 h-1 w-12 rounded-full bg-[#fbbf24] group-hover:w-full transition-all duration-500 relative z-10"></div>
-                                </div>
-
-                                {[
-                                    { label: 'Cartas Raras', value: '156', color: 'text-amber-600', accent: 'bg-amber-400' },
-                                    { label: 'Última Captura', value: 'Mewtwo EX', color: 'text-purple-600', accent: 'bg-purple-400' }
-                                ].map((stat, i) => (
-                                    <div key={i} className="bg-white border-[3px] border-[#fbbf24] rounded-xl sm:rounded-2xl p-4 sm:p-8 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-center">
-                                        <span className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-2 sm:mb-4">{stat.label}</span>
-                                        <p className={`text-xl sm:text-4xl font-black ${stat.color} tracking-tight`}>{stat.value}</p>
-                                        <div className={`mt-4 sm:mt-6 h-1 w-12 rounded-full ${stat.accent} group-hover:w-full transition-all duration-500`}></div>
+                            {currentTab === 'Home' ? (
+                                <>
+                                    <div className="mb-6 sm:mb-10">
+                                        <h2 className="text-lg sm:text-2xl font-black text-slate-800 tracking-tight">
+                                            {getGreeting()}, {userName}!
+                                        </h2>
+                                        <p className="text-[10px] sm:text-sm text-slate-500 border-b border-slate-100 pb-4 sm:pb-6 uppercase tracking-[0.2em] font-bold mt-4">Seu Dashboard</p>
                                     </div>
-                                ))}
-                            </div>
+
+                                    {/* Proportional Grid */}
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 flex-1 content-start">
+                                        {/* Coleção Total - Special Styling */}
+                                        <div className="bg-[#1e40af] border-[3px] border-[#fbbf24] rounded-xl sm:rounded-2xl p-4 sm:p-8 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-center relative overflow-hidden cursor-pointer" onClick={() => setCurrentTab('Coleção')}>
+                                            <div className="absolute inset-0 opacity-10 bg-[conic-gradient(from_0deg_at_50%_50%,_transparent_0deg,_rgba(255,255,255,0.1)_30deg,_transparent_360deg)] animate-[spin_60s_linear_infinite] pointer-events-none"></div>
+                                            <span className="text-[10px] sm:text-xs font-black text-white uppercase tracking-[0.2em] mb-2 sm:mb-4 relative z-10">Coleção Total</span>
+                                            <p className="text-xl sm:text-4xl font-black text-[#fbbf24] tracking-tight relative z-10">1.248</p>
+                                            <div className="mt-4 sm:mt-6 h-1 w-12 rounded-full bg-[#fbbf24] group-hover:w-full transition-all duration-500 relative z-10"></div>
+                                        </div>
+
+                                        {[
+                                            { label: 'Cartas Raras', value: '156', color: 'text-amber-600', accent: 'bg-amber-400' },
+                                            { label: 'Última Captura', value: 'Mewtwo EX', color: 'text-purple-600', accent: 'bg-purple-400' }
+                                        ].map((stat, i) => (
+                                            <div key={i} className="bg-white border-[3px] border-[#fbbf24] rounded-xl sm:rounded-2xl p-4 sm:p-8 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-center cursor-pointer">
+                                                <span className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-2 sm:mb-4">{stat.label}</span>
+                                                <p className={`text-xl sm:text-4xl font-black ${stat.color} tracking-tight`}>{stat.value}</p>
+                                                <div className={`mt-4 sm:mt-6 h-1 w-12 rounded-full ${stat.accent} group-hover:w-full transition-all duration-500`}></div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </>
+                            ) : (
+                                <div className="flex-1 flex flex-col items-center justify-center text-center animate-in fade-in zoom-in duration-300">
+                                    <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mb-6 border-2 border-dashed border-blue-200">
+                                        <User className="w-10 h-10 text-blue-300" />
+                                    </div>
+                                    <h2 className="text-2xl font-black text-slate-800 mb-2 uppercase tracking-tighter">{currentTab}</h2>
+                                    <p className="text-slate-500 max-w-md">Esta área está sendo preparada para receber suas informações de {currentTab.toLowerCase()}.</p>
+                                    <button
+                                        onClick={() => setCurrentTab('Home')}
+                                        className="mt-8 px-6 py-2 bg-[#1e40af] text-white rounded-lg font-bold uppercase text-xs tracking-widest hover:bg-blue-800 transition-colors shadow-lg"
+                                    >
+                                        Voltar ao Dashboard
+                                    </button>
+                                </div>
+                            )}
 
                             {/* Filler Space to maintain proportion */}
                             <div className="flex-1 min-h-[100px] sm:min-h-[200px]"></div>

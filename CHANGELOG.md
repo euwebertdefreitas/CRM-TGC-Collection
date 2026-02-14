@@ -5,6 +5,15 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.9] - 13/02/2026 22:20
+
+### Added
+- Navegação Interna Funcional: Implementada a lógica de roteamento por estado para os itens do menu.
+- Direcionamento para Home: O item de menu "Home" agora reseta a visualização para o Dashboard principal.
+- Placeholders de Seções: Adicionadas telas de transição para as seções "Perfil", "Coleção" e "Configurações".
+- Interatividade em Cards: Cards de estatísticas agora possuem feedback de clique para navegação rápida.
+
+
 ## [0.9.8] - 13/02/2026 22:15
 
 ### Changed
