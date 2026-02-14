@@ -1,7 +1,16 @@
-<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="32" cy="32" r="30" fill="white" stroke="black" stroke-width="4"/>
-  <path d="M4 32H60" stroke="black" stroke-width="4"/>
-  <path d="M32 4C16.536 4 4 16.536 4 32H60C60 16.536 47.464 4 32 4Z" fill="#ff0000"/>
-  <circle cx="32" cy="32" r="9" fill="white" stroke="black" stroke-width="4"/>
-  <circle cx="32" cy="32" r="4" fill="white" stroke="black" stroke-width="2"/>
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Red Top Half -->
+  <path d="M100 200C155.228 200 200 155.228 200 100C200 44.7715 155.228 0 100 0C44.7715 0 0 44.7715 0 100C0 155.228 44.7715 200 100 200Z" fill="white"/>
+  <path d="M100 0C155.228 0 200 44.7715 200 100H0C0 44.7715 44.7715 0 100 0Z" fill="#CE2211"/>
+  
+  <!-- Black Center Band -->
+  <rect y="88" width="200" height="24" fill="#222224"/>
+  
+  <!-- Outer Button Ring -->
+  <circle cx="100" cy="100" r="28" fill="#222224"/>
+  <circle cx="100" cy="100" r="24" fill="white"/>
+  
+  <!-- Inner Button -->
+  <circle cx="100" cy="100" r="14" fill="white" stroke="#222224" stroke-width="2"/>
+  <circle cx="100" cy="100" r="10" fill="white" fill-opacity="0.5"/>
 </svg>

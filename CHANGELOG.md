@@ -5,6 +5,12 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.1] - 13/02/2026 22:00
+
+### Fixed
+- Correção na URL da Logo oficial do Pokémon TCG que apresentava falha de carregamento.
+- Atualização do asset da Pokébola do login para as cores tradicionais (Vermelho/Branco), substituindo o ícone simplificado.
+
 ## [0.8.0] - 13/02/2026 21:50
 
 ### Added

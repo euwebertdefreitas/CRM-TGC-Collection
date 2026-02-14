@@ -44,7 +44,7 @@ export const Login: React.FC = () => {
                         {/* Top Logo Area: Official Pokémon TCG Logo */}
                         <div className="text-center mt-2 flex flex-col items-center">
                             <img
-                                src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Pkmn_tcg_logo.png"
+                                src="https://upload.wikimedia.org/wikipedia/en/3/3b/Pokemon_Trading_Card_Game_logo.svg"
                                 alt="Pokémon TCG Logo"
                                 className="w-48 h-auto drop-shadow-xl filter brightness-110"
                             />
