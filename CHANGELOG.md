@@ -5,6 +5,12 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.2] - 13/02/2026 22:15
+
+### Fixed
+- Alteração da fonte da logomarca do login para arquivo local (logo-pokemon-tcg.png) para garantir compatibilidade e carregamento.
+- Ajuste de alinhamento da pokébola decorativa do login, removendo a rotação para centralizá-la perfeitamente.
+
 ## [0.8.1] - 13/02/2026 22:00
 
 ### Fixed
