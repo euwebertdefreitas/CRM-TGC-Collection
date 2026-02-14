@@ -5,6 +5,22 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.0] - 13/02/2026 21:50
+
+### Added
+- Automação do Widget de Changelog:
+    - O conteúdo do modal "Novidades" agora é lido e atualizado automaticamente a partir do arquivo `CHANGELOG.md` do projeto.
+    - Implementação de parser de Markdown customizado para extrair versões, datas e lista de mudanças em tempo de execução.
+
+### Changed
+- Refinamento Visual do Login (Tema Oficial):
+    - Substituição do texto "POkémON" estilizado pela Logo Oficial do Pokémon TCG.
+    - Substituição do ícone de fundo por uma Pokébola Tradicional (Vermelha/Branca) de alta fidelidade.
+    - Ajuste de cores para eliminar tons acinzentados indesejados, garantindo uniformidade com o fundo global.
+- Atualização do Tema do Widget de Changelog:
+    - Alinhamento visual completo com o card de Login: Fundo azul `Royal Blue` (#1e40af), bordas douradas e tipografia contrastante.
+    - Adicionado efeito de "Starburst" (Redemoinho) sutil ao fundo do modal.
+
 ## [0.7.0] - 13/02/2026 21:30
 
 ### Changed

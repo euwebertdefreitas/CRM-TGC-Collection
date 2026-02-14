@@ -3,9 +3,8 @@ import { ChangelogWidget } from './components/ChangelogWidget'
 
 function App() {
   return (
-    <div className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-neutral-100">
-      {/* Background Abstract Effect */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-neutral-200 via-stone-200 to-neutral-100 opacity-80 blur-3xl scale-150 animate-pulse delay-700 pointer-events-none"></div>
+    <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+
 
       <div className="z-10 animate-fade-in-up">
         <Login />

@@ -41,22 +41,18 @@ export const Login: React.FC = () => {
                     {/* Content Layer */}
                     <div className="relative z-10 w-full h-full flex flex-col items-center justify-between py-12 px-6">
 
-                        {/* Top Logo Area: "Pokémon" Style */}
-                        <div className="text-center mt-2">
-                            <h1 className="text-4xl font-extrabold tracking-tight text-[#ffcb05] drop-shadow-[4px_4px_0_#2b2b2b] stroke-blue-900" style={{ WebkitTextStroke: '2px #3b82f6' }}>
-                                POkémON
-                            </h1>
-                            <div className="h-1 w-24 bg-white/20 mx-auto mt-2 rounded-full blur-[1px]"></div>
+                        {/* Top Logo Area: Official Pokémon TCG Logo */}
+                        <div className="text-center mt-2 flex flex-col items-center">
+                            <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Pkmn_tcg_logo.png"
+                                alt="Pokémon TCG Logo"
+                                className="w-48 h-auto drop-shadow-xl filter brightness-110"
+                            />
                         </div>
 
-                        {/* Center Decorative Element: Poké Ball */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 opacity-10 pointer-events-none">
-                            <svg viewBox="0 0 100 100" className="w-full h-full fill-white">
-                                <circle cx="50" cy="50" r="45" />
-                                <path d="M 5 50 H 95" stroke="#172554" strokeWidth="8" />
-                                <circle cx="50" cy="50" r="15" fill="#172554" />
-                                <circle cx="50" cy="50" r="10" fill="white" />
-                            </svg>
+                        {/* Center Decorative Element: Traditional Poké Ball */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 opacity-20 pointer-events-none rotate-12">
+                            <img src="/pokeball.svg" alt="Pokeball Background" className="w-full h-full drop-shadow-2xl" />
                         </div>
 
                         {/* Login Form */}
