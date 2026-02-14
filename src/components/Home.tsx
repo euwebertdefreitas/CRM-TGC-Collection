@@ -135,37 +135,36 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
                                         <p className="text-[10px] sm:text-sm text-slate-500 border-b border-slate-100 pb-4 sm:pb-6 uppercase tracking-[0.2em] font-bold mt-4">Seu Dashboard</p>
                                     </div>
 
-                                    {/* News Feed - Width matching grid cards */}
-                                    <div className="w-full lg:w-[calc(33.33%-1.33rem)] bg-slate-50 border-2 border-blue-100 rounded-2xl p-4 relative overflow-hidden group hover:border-[#fbbf24] transition-all duration-500 shadow-sm self-start lg:self-center">
-                                        <div className="flex items-center gap-3 mb-2">
-                                            <div className="bg-blue-600 p-1.5 rounded-lg">
+                                    {/* News Feed - Redesigned: Wider, Slimmer, and Integrated Icon */}
+                                    <div className="w-full lg:w-[calc(66.66%-0.66rem)] bg-slate-50 border-2 border-slate-100 rounded-xl py-1.5 px-4 relative overflow-hidden group hover:border-[#fbbf24] transition-all duration-500 shadow-sm self-start lg:self-center">
+                                        <div className="h-10 relative overflow-hidden flex items-center gap-3">
+                                            <div className="bg-blue-600 p-1.5 rounded-lg shrink-0">
                                                 <Newspaper className="w-4 h-4 text-white" />
                                             </div>
-                                            <span className="text-[9px] font-black text-blue-900 uppercase tracking-tight">Últimas Notícias Pokémon TCG no Brasil</span>
-                                        </div>
-                                        <div className="h-12 relative overflow-hidden">
-                                            {pokemonNews.map((news, idx) => (
-                                                <div
-                                                    key={idx}
-                                                    onClick={() => window.open(news.url, '_blank')}
-                                                    className={`absolute inset-0 flex flex-col justify-center gap-1 transition-all duration-700 transform cursor-pointer ${idx === currentNewsIndex
-                                                        ? 'opacity-100 translate-y-0 scale-100'
-                                                        : 'opacity-0 translate-y-8 scale-95'
-                                                        }`}
-                                                >
-                                                    <div className="flex items-center gap-2">
-                                                        <ChevronRight className="w-3 h-3 text-[#fbbf24] shrink-0" />
-                                                        <p className="text-[11px] sm:text-xs font-bold text-slate-700 leading-tight line-clamp-1 group-hover:text-blue-600 transition-colors">
-                                                            {news.title}
-                                                        </p>
+                                            <div className="flex-1 h-full relative">
+                                                {pokemonNews.map((news, idx) => (
+                                                    <div
+                                                        key={idx}
+                                                        onClick={() => window.open(news.url, '_blank')}
+                                                        className={`absolute inset-0 flex items-center justify-between gap-4 transition-all duration-700 transform cursor-pointer ${idx === currentNewsIndex
+                                                            ? 'opacity-100 translate-y-0 scale-100'
+                                                            : 'opacity-0 translate-y-8 scale-95'
+                                                            }`}
+                                                    >
+                                                        <div className="flex items-center gap-2 overflow-hidden">
+                                                            <ChevronRight className="w-3 h-3 text-[#fbbf24] shrink-0" />
+                                                            <p className="text-[11px] sm:text-xs font-bold text-slate-700 leading-tight truncate group-hover:text-blue-600 transition-colors">
+                                                                {news.title}
+                                                            </p>
+                                                        </div>
+                                                        <div className="flex items-center gap-2 shrink-0">
+                                                            <span className="text-[9px] font-black text-blue-600/70 uppercase whitespace-nowrap">{news.source}</span>
+                                                            <span className="w-1 h-1 rounded-full bg-slate-300"></span>
+                                                            <span className="text-[9px] font-bold text-slate-400 whitespace-nowrap">{news.date}</span>
+                                                        </div>
                                                     </div>
-                                                    <div className="flex items-center gap-2 ml-5">
-                                                        <span className="text-[9px] font-bold text-blue-600/70 uppercase">{news.source}</span>
-                                                        <span className="w-1 h-1 rounded-full bg-slate-300"></span>
-                                                        <span className="text-[9px] font-medium text-slate-400">{news.date}</span>
-                                                    </div>
-                                                </div>
-                                            ))}
+                                                ))}
+                                            </div>
                                         </div>
                                         {/* Progress bar for the news loop */}
                                         <div className="absolute bottom-0 left-0 h-0.5 bg-[#fbbf24]/30 w-full overflow-hidden">

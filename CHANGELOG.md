@@ -5,6 +5,18 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.2] - 13/02/2026 22:35
+
+### Changed
+- Redesign do Feed de Notícias: Bloco expandido para dobrar sua largura original, ocupando agora dois terços da grade principal no desktop.
+- Otimização de Espaço: Altura reduzida pela metade e remoção do cabeçalho fixo para um visual mais "slim" e integrado.
+- Refinamento de UI: Ícone de jornal movido para a lateral esquerda, alinhado diretamente com o texto da notícia.
+- Melhoria na Navegação: Otimização do link de redirecionamento para garantir o acesso direto à URL da matéria em nova guia.
+
+### Removed
+- Texto redundante "Últimas Notícias Pokémon TCG no Brasil" em favor de um layout minimalista e focado no conteúdo.
+
+
 ## [0.10.1] - 13/02/2026 22:30
 
 ### Changed
