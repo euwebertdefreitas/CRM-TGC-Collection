@@ -5,6 +5,16 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.1] - 13/02/2026 22:30
+
+### Changed
+- Refinamento do Feed de Notícias: Largura ajustada para alinhar perfeitamente com os cards de estatísticas abaixo.
+- Identidade Visual: Título do feed alterado para "Últimas Notícias Pokémon TCG no Brasil".
+- Enriquecimento de Dados: Removida a tag "AO VIVO" em favor da exibição da fonte original e data de publicação de cada notícia.
+- Interatividade: Adicionada funcionalidade de clique nas notícias, abrindo a fonte original em uma nova aba do navegador.
+- Persistência de Dados: Lógica de carregamento vinculada ao momento do login, garantindo estabilidade do feed durante a sessão do usuário.
+
+
 ## [0.10.0] - 13/02/2026 22:25
 
 ### Added

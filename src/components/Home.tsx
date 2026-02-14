@@ -37,16 +37,16 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
     };
 
     const pokemonNews = [
-        "Celebrações globais do 30º aniversário de Pokémon começam este mês!",
-        "Dia de Pokémon (27/02): Eventos especiais em Ligas Pokémon locais em todo o Brasil.",
-        "Carta promocional de Bulbasaur disponível em eventos oficiais da Liga Pokémon.",
-        "Lançamento da 'Coleção Dia de Pokémon 2026' com Pikachu holográfico exclusivo.",
-        "Coleção Ilustração Parceiro Inicial — Série 1 chega às lojas em março.",
-        "LEGO Pokémon: Primeiros conjuntos oficiais chegam ao Brasil em 27 de fevereiro.",
-        "Jazwares anuncia linha de pelúcias exclusivas para os 30 anos da franquia.",
-        "Evento Mega Medicham ex disponível no aplicativo Pokémon Estampas Ilustradas Pocket.",
-        "Mercado Brasileiro: Brasil é agora o 3º maior mercado de Pokémon TCG do mundo.",
-        "Super Bowl LX: Comercial do 30º aniversário de Pokémon emociona fãs globais."
+        { title: "Celebrações globais do 30º aniversário de Pokémon começam este mês!", source: "GamerScore", date: "11/02/2026", url: "https://gamerscore.com.br" },
+        { title: "Dia de Pokémon (27/02): Eventos especiais em Ligas Pokémon locais em todo o Brasil.", source: "Pokémon.com", date: "13/02/2026", url: "https://pokemon.com" },
+        { title: "Carta promocional de Bulbasaur disponível em eventos oficiais da Liga Pokémon.", source: "Pokémon.com", date: "13/02/2026", url: "https://pokemon.com" },
+        { title: "Lançamento da 'Coleção Dia de Pokémon 2026' com Pikachu exclusivo.", source: "LigaPokemon", date: "12/02/2026", url: "https://ligapokemon.com.br" },
+        { title: "Coleção Ilustração Parceiro Inicial — Série 1 chega às lojas em março.", source: "Suco de Mangá", date: "10/02/2026", url: "https://sucodemanga.com.br" },
+        { title: "LEGO Pokémon: Primeiros conjuntos oficiais chegam ao Brasil em 27 de fevereiro.", source: "GamerScore", date: "13/02/2026", url: "https://gamerscore.com.br" },
+        { title: "Jazwares lança linha de produtos exclusivos para os 30 anos da franquia.", source: "GamerScore", date: "12/02/2026", url: "https://gamerscore.com.br" },
+        { title: "Evento de Mega Medicham ex disponível no Pokémon Estampas Ilustradas Pocket.", source: "Pokémon.com", date: "11/02/2026", url: "https://pokemon.com" },
+        { title: "Brasil se consolida como o terceiro maior mercado de Pokémon TCG do mundo.", source: "Pokémon Super", date: "09/02/2026", url: "https://lojapokemonsuper.com" },
+        { title: "Novos códigos promocionais esperados para o Dia de Pokémon 2026.", source: "Nintenderos", date: "13/02/2026", url: "https://nintenderos.com" }
     ];
 
     const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
@@ -135,31 +135,35 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
                                         <p className="text-[10px] sm:text-sm text-slate-500 border-b border-slate-100 pb-4 sm:pb-6 uppercase tracking-[0.2em] font-bold mt-4">Seu Dashboard</p>
                                     </div>
 
-                                    {/* News Feed - Opposite to Greeting */}
-                                    <div className="flex-1 max-w-xl bg-slate-50 border-2 border-blue-100 rounded-2xl p-4 relative overflow-hidden group hover:border-[#fbbf24] transition-all duration-500 shadow-sm self-start lg:self-center">
+                                    {/* News Feed - Width matching grid cards */}
+                                    <div className="w-full lg:w-[calc(33.33%-1.33rem)] bg-slate-50 border-2 border-blue-100 rounded-2xl p-4 relative overflow-hidden group hover:border-[#fbbf24] transition-all duration-500 shadow-sm self-start lg:self-center">
                                         <div className="flex items-center gap-3 mb-2">
                                             <div className="bg-blue-600 p-1.5 rounded-lg">
                                                 <Newspaper className="w-4 h-4 text-white" />
                                             </div>
-                                            <span className="text-[10px] font-black text-blue-900 uppercase tracking-widest">Pokémon TCG News Brasil</span>
-                                            <div className="ml-auto flex gap-1">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></div>
-                                                <span className="text-[8px] font-bold text-slate-400">AO VIVO</span>
-                                            </div>
+                                            <span className="text-[9px] font-black text-blue-900 uppercase tracking-tight">Últimas Notícias Pokémon TCG no Brasil</span>
                                         </div>
-                                        <div className="h-10 relative overflow-hidden">
+                                        <div className="h-12 relative overflow-hidden">
                                             {pokemonNews.map((news, idx) => (
                                                 <div
                                                     key={idx}
-                                                    className={`absolute inset-0 flex items-center gap-3 transition-all duration-700 transform ${idx === currentNewsIndex
+                                                    onClick={() => window.open(news.url, '_blank')}
+                                                    className={`absolute inset-0 flex flex-col justify-center gap-1 transition-all duration-700 transform cursor-pointer ${idx === currentNewsIndex
                                                         ? 'opacity-100 translate-y-0 scale-100'
                                                         : 'opacity-0 translate-y-8 scale-95'
                                                         }`}
                                                 >
-                                                    <ChevronRight className="w-4 h-4 text-[#fbbf24] shrink-0" />
-                                                    <p className="text-xs sm:text-sm font-bold text-slate-700 leading-tight line-clamp-2">
-                                                        {news}
-                                                    </p>
+                                                    <div className="flex items-center gap-2">
+                                                        <ChevronRight className="w-3 h-3 text-[#fbbf24] shrink-0" />
+                                                        <p className="text-[11px] sm:text-xs font-bold text-slate-700 leading-tight line-clamp-1 group-hover:text-blue-600 transition-colors">
+                                                            {news.title}
+                                                        </p>
+                                                    </div>
+                                                    <div className="flex items-center gap-2 ml-5">
+                                                        <span className="text-[9px] font-bold text-blue-600/70 uppercase">{news.source}</span>
+                                                        <span className="w-1 h-1 rounded-full bg-slate-300"></span>
+                                                        <span className="text-[9px] font-medium text-slate-400">{news.date}</span>
+                                                    </div>
                                                 </div>
                                             ))}
                                         </div>
