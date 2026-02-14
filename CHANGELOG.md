@@ -5,6 +5,23 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.0] - 13/02/2026 22:30
+
+### Added
+- Implementação de Autenticação Mockada:
+    - Criação de usuário de teste `Admin` com senha `Admin`.
+    - Lógica de redirecionamento automático para a página principal após login bem-sucedido.
+- Nova Página "Home":
+    - Desenvolvimento do componente `Home.tsx` como dashboard principal.
+    - Barra superior moderna com identificação do usuário, avatar e botão de logoff.
+    - Relatório funcional em tempo real exibindo dia da semana, data e horário atualizado por segundo.
+    - Layout responsivo e clean mantendo a paleta de cores azul royal e dourado.
+
+### Changed
+- Refatoração do `App.tsx` para gerenciar estado de autenticação e navegação entre telas.
+- Atualização do componente `Login.tsx` para aceitar as credenciais de teste e fornecer feedback de erro visual.
+
+
 ## [0.8.2] - 13/02/2026 22:15
 
 ### Fixed
