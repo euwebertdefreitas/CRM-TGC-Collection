@@ -5,6 +5,14 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.3] - 13/02/2026 21:55
+
+### Changed
+- Saudação Dinâmica: Implementada mensagem de boas-vindas que se adapta ao horário do dia (Bom dia, Boa tarde, Boa noite).
+- Padronização Visual dos Cards: Aplicada a borda dourada (`#fbbf24`) a todos os cards da dashboard (Cartas Raras e Última Captura), unificando a identidade visual premium.
+- Refinamento de Layout: Ajustes de cores e pesos de fonte nos cards para melhor legibilidade e contraste.
+
+
 ## [0.9.2] - 13/02/2026 22:55
 
 ### Changed

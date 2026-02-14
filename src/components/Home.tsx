@@ -28,6 +28,13 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
         return date.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
     };
 
+    const getGreeting = () => {
+        const hour = dateTime.getHours();
+        if (hour >= 5 && hour < 12) return 'Bom dia! Pronta para mais uma jornada?';
+        if (hour >= 12 && hour < 18) return 'Boa tarde! Como vai a sua coleção?';
+        return 'Boa noite! Que tal organizar suas cartas?';
+    };
+
     return (
         <div className="w-full flex-1 flex flex-col bg-slate-50 overflow-hidden">
             {/* Top Bar */}
@@ -82,7 +89,9 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
 
                         <div className="relative z-10 flex-1 flex flex-col">
                             <div className="mb-6 sm:mb-10">
-                                <h2 className="text-xl sm:text-4xl font-extrabold text-slate-800 mb-1 sm:mb-2 tracking-tight">Bem-vindo de volta, {userName}!</h2>
+                                <h2 className="text-xl sm:text-4xl font-extrabold text-slate-800 mb-1 sm:mb-2 tracking-tight">
+                                    Bem-Vindo {userName}! <span className="text-[#1e40af] block sm:inline">{getGreeting()}</span>
+                                </h2>
                                 <p className="text-xs sm:text-lg text-slate-500 border-b border-slate-100 pb-4 sm:pb-6 uppercase tracking-wider font-medium">Dashboard de Controle TCG</p>
                             </div>
 
@@ -97,13 +106,13 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
                                 </div>
 
                                 {[
-                                    { label: 'Cartas Raras', value: '156', color: 'text-amber-600', icon: 'bg-amber-50' },
-                                    { label: 'Última Captura', value: 'Mewtwo EX', color: 'text-purple-600', icon: 'bg-purple-50' }
+                                    { label: 'Cartas Raras', value: '156', color: 'text-amber-600', accent: 'bg-amber-400' },
+                                    { label: 'Última Captura', value: 'Mewtwo EX', color: 'text-purple-600', accent: 'bg-purple-400' }
                                 ].map((stat, i) => (
-                                    <div key={i} className="bg-white border border-slate-100 rounded-xl sm:rounded-2xl p-4 sm:p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-center">
+                                    <div key={i} className="bg-white border-[3px] border-[#fbbf24] rounded-xl sm:rounded-2xl p-4 sm:p-8 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-center">
                                         <span className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-2 sm:mb-4">{stat.label}</span>
                                         <p className={`text-xl sm:text-4xl font-black ${stat.color} tracking-tight`}>{stat.value}</p>
-                                        <div className={`mt-4 sm:mt-6 h-1 w-12 rounded-full ${stat.icon.replace('bg-', 'bg-opacity-50 bg-')} group-hover:w-full transition-all duration-500`}></div>
+                                        <div className={`mt-4 sm:mt-6 h-1 w-12 rounded-full ${stat.accent} group-hover:w-full transition-all duration-500`}></div>
                                     </div>
                                 ))}
                             </div>
