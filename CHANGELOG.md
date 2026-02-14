@@ -5,6 +5,16 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.8] - 13/02/2026 22:15
+
+### Changed
+- Refinamento do Menu de Navegação:
+    - Aumento do tamanho da fonte para melhor legibilidade (`text-xs`).
+    - Cor base dos itens alterada para Branco puro.
+    - Adicionado efeito de hover com a cor Dourada do tema (`#fbbf24`) e um sublinhado animado.
+    - Ajuste no espaçamento entre os itens do menu.
+
+
 ## [0.9.7] - 13/02/2026 22:10
 
 ### Added

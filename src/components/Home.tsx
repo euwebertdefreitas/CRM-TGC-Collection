@@ -45,11 +45,11 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
                     <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
                         <h1 className="text-white font-black tracking-tight text-sm sm:text-lg whitespace-nowrap hidden xs:block">TCG Collector App</h1>
 
-                        {/* Navigation Menu */}
-                        <nav className="hidden lg:flex items-center gap-4 ml-4">
+                        <nav className="hidden lg:flex items-center gap-6 ml-6">
                             {['Home', 'Perfil', 'Coleção', 'Configurações'].map((item) => (
-                                <button key={item} className="text-blue-100/70 hover:text-white text-[10px] uppercase tracking-widest font-bold transition-colors">
+                                <button key={item} className="text-white hover:text-[#fbbf24] text-[11px] sm:text-xs uppercase tracking-[0.15em] font-black transition-all duration-300 relative group">
                                     {item}
+                                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#fbbf24] transition-all duration-300 group-hover:w-full"></span>
                                 </button>
                             ))}
                         </nav>
