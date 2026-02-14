@@ -95,7 +95,7 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
                                 <p className="text-sm sm:text-xl text-[#1e40af] font-bold mt-1">
                                     {getGreeting()}
                                 </p>
-                                <p className="text-[10px] sm:text-sm text-slate-500 border-b border-slate-100 pb-4 sm:pb-6 uppercase tracking-[0.2em] font-bold mt-4">Dashboard de Controle TCG</p>
+                                <p className="text-[10px] sm:text-sm text-slate-500 border-b border-slate-100 pb-4 sm:pb-6 uppercase tracking-[0.2em] font-bold mt-4">Seu Dashboard</p>
                             </div>
 
                             {/* Proportional Grid */}

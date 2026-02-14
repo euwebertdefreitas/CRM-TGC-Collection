@@ -5,6 +5,12 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.5] - 13/02/2026 21:58
+
+### Changed
+- Refinamento de Texto: Alterado o subtítulo da dashboard de "Dashboard de Controle TCG" para "Seu Dashboard" para uma comunicação mais direta e pessoal.
+
+
 ## [0.9.4] - 13/02/2026 22:00
 
 ### Changed
