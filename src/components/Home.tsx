@@ -127,12 +127,11 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
 
                         {currentTab === 'Home' ? (
                             <>
-                                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-6 sm:mb-10">
+                                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-3 sm:mb-5">
                                     <div>
                                         <h2 className="text-lg sm:text-2xl font-black text-slate-800 tracking-tight">
                                             {getGreeting()}, {userName}!
                                         </h2>
-                                        <p className="text-[10px] sm:text-sm text-slate-500 border-b border-slate-100 pb-4 sm:pb-6 uppercase tracking-[0.2em] font-bold mt-4">Seu Dashboard</p>
                                     </div>
 
                                     {/* News Feed - Redesigned: Wider, Slimmer, and Integrated Icon */}

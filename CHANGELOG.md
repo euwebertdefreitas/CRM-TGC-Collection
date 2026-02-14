@@ -5,6 +5,15 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.3] - 13/02/2026 22:40
+
+### Changed
+- Refinamento de Layout: Reduzido em 50% o espaçamento vertical entre o cabeçalho/feed e os cards de estatísticas para uma interface mais compacta.
+
+### Removed
+- Texto "Seu Dashboard": Removida a etiqueta redundante abaixo da saudação para simplificar o cabeçalho.
+
+
 ## [0.10.2] - 13/02/2026 22:35
 
 ### Changed
