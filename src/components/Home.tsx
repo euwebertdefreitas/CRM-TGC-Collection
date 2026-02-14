@@ -35,7 +35,7 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
                 <div className="flex items-center gap-2 sm:gap-4 overflow-hidden">
                     <img src="/logo-pokemon-tcg.png" alt="Logo" className="h-8 sm:h-12 w-auto shrink-0" />
                     <div className="h-8 w-px bg-white/20 mx-1 hidden sm:block"></div>
-                    <h1 className="text-white font-bold tracking-tight text-sm sm:text-base whitespace-nowrap hidden xs:block">CRM Collection</h1>
+                    <h1 className="text-white font-black tracking-tight text-sm sm:text-lg whitespace-nowrap hidden xs:block">TCG Collector App</h1>
                 </div>
 
                 <div className="flex items-center gap-3 sm:gap-6">
@@ -88,8 +88,15 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
 
                             {/* Proportional Grid */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 flex-1 content-start">
+                                {/* Coleção Total - Special Styling */}
+                                <div className="bg-[#1e40af] border-[3px] border-[#fbbf24] rounded-xl sm:rounded-2xl p-4 sm:p-8 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-center relative overflow-hidden">
+                                    <div className="absolute inset-0 opacity-10 bg-[conic-gradient(from_0deg_at_50%_50%,_transparent_0deg,_rgba(255,255,255,0.1)_30deg,_transparent_360deg)] animate-[spin_60s_linear_infinite] pointer-events-none"></div>
+                                    <span className="text-[10px] sm:text-xs font-black text-white uppercase tracking-[0.2em] mb-2 sm:mb-4 relative z-10">Coleção Total</span>
+                                    <p className="text-xl sm:text-4xl font-black text-[#fbbf24] tracking-tight relative z-10">1.248</p>
+                                    <div className="mt-4 sm:mt-6 h-1 w-12 rounded-full bg-[#fbbf24] group-hover:w-full transition-all duration-500 relative z-10"></div>
+                                </div>
+
                                 {[
-                                    { label: 'Coleção Total', value: '1.248', color: 'text-blue-600', icon: 'bg-blue-50' },
                                     { label: 'Cartas Raras', value: '156', color: 'text-amber-600', icon: 'bg-amber-50' },
                                     { label: 'Última Captura', value: 'Mewtwo EX', color: 'text-purple-600', icon: 'bg-purple-50' }
                                 ].map((stat, i) => (

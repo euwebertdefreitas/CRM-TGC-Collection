@@ -5,6 +5,14 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.2] - 13/02/2026 22:55
+
+### Changed
+- Rebranding da Dashboard: Nome do sistema atualizado para **TCG Collector App** no cabeçalho.
+- Estilização do Card "Coleção Total": Aplicado tema premium com fundo azul, borda dourada e contador em destaque dourado, alinhando visualmente com o tema principal de cartas TCG.
+- Tipografia: Ajuste de pesos de fonte para melhor hierarquia visual na barra superior.
+
+
 ## [0.9.1] - 13/02/2026 22:45
 
 ### Fixed
