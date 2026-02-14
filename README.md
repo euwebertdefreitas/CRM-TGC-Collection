@@ -1,73 +1,92 @@
-# React + TypeScript + Vite
+# 🎴 TCG Collection
+> **A sua jornada mestre começa aqui.** Gerenciamento premium para colecionadores de Pokémon TCG.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 📋 Sobre o Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O **TCG Collection** é uma plataforma moderna e performática desenvolvida para auxiliar treinadores e colecionadores de Pokémon Estampas Ilustradas a gerenciarem seus itens com uma interface de alto impacto visual e experiência de usuário premium.
 
-## React Compiler
+O sistema foca em acessibilidade, design responsivo e informações em tempo real sobre o cenário de TCG no Brasil.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Lucide](https://img.shields.io/badge/Lucide_React-000000?style=for-the-badge&logo=lucide&logoColor=white)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## ✨ Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- 💎 **Login Hyper Rare:** Interface de autenticação com fundo animado e estética premium.
+- 📊 **Dashboard Dinâmica:** Indicadores visuais de coleção total, cartas raras e últimas capturas.
+- 🌅 **Saudação Adaptativa:** Mensagens personalizadas baseadas no horário do dia do usuário.
+- 📰 **Feed de Notícias:** Ticker dinâmico com as últimas novidades do Pokémon TCG no Brasil e links diretos.
+- 🧭 **Navegação Funcional:** Sistema de roteamento interno por estado para Perfil, Coleção e Configurações.
+- 📜 **Widget de Changelog:** Histórico de versões integrado diretamente na interface.
+- 📱 **Design Responsivo:** Otimizado para dispositivos móveis e desktops.
+
+---
+
+## 🚀 Instalação e Uso
+
+Siga os passos abaixo para rodar o projeto localmente:
+
+1. **Clonar o repositório:**
+   ```bash
+   git clone https://github.com/euwebertdefreitas/CRM-TGC-Collection.git
+   ```
+
+2. **Entrar no diretório:**
+   ```bash
+   cd CRM-TGC-Collection
+   ```
+
+3. **Instalar dependências:**
+   ```bash
+   npm install
+   ```
+
+4. **Executar em modo de desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
+
+A aplicação estará disponível em `http://localhost:5173`.
+
+---
+
+## 📂 Estrutura de Pastas
+
+```text
+src/
+├── assets/          # Ativos estáticos (fontes, imagens)
+├── components/      # Componentes reutilizáveis (Home, Login, etc.)
+├── App.tsx          # Componente principal e lógica de rotas
+├── index.css        # Estilos globais e Tailwind v4
+└── main.tsx         # Ponto de entrada da aplicação
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🗺️ Roadmap
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- [ ] 🔗 Integração com a API oficial Pokémon TCG.
+- [ ] 💾 Persistência de dados com Banco de Dados (PostgreSQL/MongoDB).
+- [ ] 🔍 Filtros avançados por expansão, raridade e tipo.
+- [ ] 📴 Suporte a PWA para uso offline.
+- [ ] 📈 Gráficos de valorização de mercado.
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+**Desenvolvido com ⚡ por [Parametrus.com](https://parametrus.com)**

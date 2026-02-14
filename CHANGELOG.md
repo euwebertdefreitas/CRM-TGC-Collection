@@ -5,6 +5,14 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.11.0] - 13/02/2026 23:10
+
+### Added
+- Documentação Técnica Profissional: Rewrite completo do arquivo `README.md` com estrutura de Tech Lead, incluindo badges, roadmap e detalhamento de features.
+- Guia de Instalação: Adicionado passo a passo claro para desenvolvedores.
+- Visão Geral da Arquitetura: Descrição da estrutura de pastas do projeto.
+
+
 ## [0.10.4] - 13/02/2026 22:45
 
 ### Fixed
