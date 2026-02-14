@@ -42,7 +42,18 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
                 <div className="flex items-center gap-2 sm:gap-4 overflow-hidden">
                     <img src="/logo-pokemon-tcg.png" alt="Logo" className="h-8 sm:h-12 w-auto shrink-0" />
                     <div className="h-8 w-px bg-white/20 mx-1 hidden sm:block"></div>
-                    <h1 className="text-white font-black tracking-tight text-sm sm:text-lg whitespace-nowrap hidden xs:block">TCG Collector App</h1>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+                        <h1 className="text-white font-black tracking-tight text-sm sm:text-lg whitespace-nowrap hidden xs:block">TCG Collector App</h1>
+
+                        {/* Navigation Menu */}
+                        <nav className="hidden lg:flex items-center gap-4 ml-4">
+                            {['Home', 'Perfil', 'Coleção', 'Configurações'].map((item) => (
+                                <button key={item} className="text-blue-100/70 hover:text-white text-[10px] uppercase tracking-widest font-bold transition-colors">
+                                    {item}
+                                </button>
+                            ))}
+                        </nav>
+                    </div>
                 </div>
 
                 <div className="flex items-center gap-3 sm:gap-6">
@@ -71,10 +82,10 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
                         </div>
                         <button
                             onClick={onLogout}
-                            className="p-1.5 sm:p-2 rounded-lg bg-red-600/20 hover:bg-red-600 text-red-100 hover:text-white transition-all duration-300 group"
+                            className="p-1.5 sm:p-2 rounded-lg bg-red-600 text-white shadow-md transition-transform active:scale-95"
                             title="Sair do Sistema"
                         >
-                            <LogOut className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
+                            <LogOut className="w-4 h-4 sm:w-5 sm:h-5" />
                         </button>
                     </div>
                 </div>
@@ -126,7 +137,7 @@ export const Home: React.FC<HomeProps> = ({ onLogout, userName }) => {
 
             {/* Footer Wrapper - Fixed at bottom */}
             <footer className="w-full py-2 sm:py-3 px-6 bg-white border-t border-slate-200 text-center text-[8px] sm:text-[10px] text-slate-400 font-mono tracking-widest shrink-0">
-                © 2026 CRM TCG COLLECTION | Parametrus.com - Todos os direitos reservados.
+                © 2026 TCG COLLECTION | Parametrus.com - Todos os direitos reservados.
             </footer>
         </div>
     );

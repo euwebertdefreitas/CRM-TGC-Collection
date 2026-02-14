@@ -5,6 +5,16 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.7] - 13/02/2026 22:10
+
+### Added
+- Menu de Navegação: Adicionado menu na barra superior com os itens "Home", "Perfil", "Coleção" e "Configurações".
+
+### Changed
+- Estilização do Botão de Logoff: O botão agora permanece sempre com fundo vermelho sólido e sombra, removendo o efeito de transparência anterior.
+- Atualização Visual do Rodapé: Removido o prefixo "CRM" do título principal no rodapé.
+
+
 ## [0.9.6] - 13/02/2026 22:05
 
 ### Changed
